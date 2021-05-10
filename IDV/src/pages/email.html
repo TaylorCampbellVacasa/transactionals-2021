@@ -1,0 +1,65 @@
+<heml>
+
+	<head>
+		<preview>Verify your identity to continue</preview>
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet" />
+
+		<!-- inject-style src="src/CSS/base.css" -->
+		<!-- inject-style src="src/CSS/typography.css" -->
+		<!-- inject-style src="src/CSS/header-white.css" -->
+		<!-- inject-style src="src/CSS/buttons.css" -->
+		<!-- inject-style src="src/CSS/vacasa-transactional-footer.css" -->
+	</head>
+
+	<body>
+		{{> t_header}}
+
+		<container>
+			<row>
+				<column class="gutter padding-t mbl-pad-md">
+					<!-- {{{{raw-helper}}}} -->
+					<p class="sub-body">
+						Thanks for your reservation request through {{channel}}. We’re
+						Vacasa, the property management company that cares for this home in
+						{{ city }}.
+					</p>
+					<br />
+					<p class="sub-body">
+						Before we can finalize your reservation, we need to verify the
+						identity of {{ first_name }} {{ last_name }} by asking a few quick
+						questions.
+					</p>
+					<!-- {{{{/raw-helper}}}} -->
+					<br />
+				</column>
+			</row>
+		</container>
+		<container>
+			<row>
+				<column class="gutter text-center padding-t mbl-pad-md">
+					{{> t_primary-button-slug url="{{{verification_link}}}" label="Verify
+					your identity" }}
+				</column>
+			</row>
+		</container>
+		<container>
+			<row>
+				<column class="gutter mbl-pad-md">
+					<br />
+
+					<p class="sub-body padding-t">
+						After you’ve verified your identity, you’ll receive a confirmation
+						email with all your reservation details. And if you have any
+						questions, reach out to our team at
+						<a href="tel:19713503755" target="_blank" style="text-decoration: none">971-350-3755</a>.
+					</p>
+					<br />
+					<p class="sub-body padding-t">We appreciate your cooperation and look forward to hosting you!</p>
+					<br />
+				</column>
+			</row>
+		</container>
+
+		{{> t_vacasa-footer}}
+	</body>
+</heml>

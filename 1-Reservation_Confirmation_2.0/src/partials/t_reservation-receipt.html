@@ -1,0 +1,86 @@
+<!-- {{{{raw-helper}}}} -->{{#contains RESERVATION_NOTES "Affirm"}}
+	<!-- {{{{/raw-helper}}}} -->
+
+	{{> t_affirm }}
+	<!-- {{{{raw-helper}}}} -->
+
+	{{else}}
+
+
+		{{#if RESERVATION_VACASA_IS_MERCHANT_OF_RECORD}}
+			<container>
+				<row>
+					<column class="padding-b padding-t text-left gutter mbl-pad-md" large="7" small="12">
+						<h2 class="t_bloc">Your Receipt</h2>
+					</column>
+				</row>
+			</container>
+
+			<container>
+				<row class="reservation-details">
+					<column class="left-col-item mbl-pad-md-l" large="7" small="6">
+						<p class="reservation-unit-date">Total cost</p>
+					</column>
+
+					<column class="right-col-item text-right mbl-pad-md-r" large="5" small="6">
+						<p class="reservation-unit-date">${{ RESERVATION_TOTAL }}</p>
+					</column>
+				</row>
+				<row class="reservation-details">
+					<column class="left-col-item mbl-pad-md-l" large="7" small="6">
+						<p class="reservation-unit-date">Total paid</p>
+					</column>
+					<column class="right-col-item text-right mbl-pad-md-r" large="5" small="6">
+						<p class="reservation-unit-date">-&nbsp;${{ RESERVATION_PAID }}</p>
+					</column>
+				</row>
+				<row>
+					<column class="padding-t padding-b mbl-pad-sm">
+						<hr style="
+          border-top: 1px solid #ccd6db;
+          width: 100%;
+          max-width: 600px;
+          height: 1px;
+        " />
+					</column>
+				</row>
+				<row class="reservation-details">
+					<column class="left-col-item mbl-pad-md-l" large="7" small="6">
+						<p class="reservation-unit-date">
+							<strong>Balance</strong>
+						</p>
+					</column>
+					<column class="right-col-item text-right mbl-pad-md-r" large="5" small="6">
+						<p class="reservation-unit-date">
+							<strong>${{ RESERVATION_BALANCE }}</strong>
+						</p>
+					</column>
+				</row>
+			</container>
+			<container>
+				<row>
+					<column class="left-btn padding-b-huge padding-t-xtra-large text-center mbl-pad-md">
+						<!-- {{{{/raw-helper}}}} -->
+						{{> t_secondary-button-side label="View Receipt"
+      url="https://guest.vacasa.com/trip/receipt" }}
+						<!-- {{{{raw-helper}}}} -->
+					</column>
+					<column large="5" small="0"></column>
+				</row>
+			</container>
+		{{else}}
+			<container class="add-info">
+				<row>
+					<column class="padding-b-large padding-t-large text-gutter text-left mbl-pad-md">
+						<h3 class="body-text">Please note:</h3>
+
+						<p class="body-text">
+							{{RESERVATION_SOURCE_NAME}} may send you a separate receipt itemizing
+							their fees. If you have any questions please contact them directly.
+						</p>
+					</column>
+				</row>
+			</container>
+		{{/if}}
+{{/contains}}
+<!-- {{{{/raw-helper}}}} -->

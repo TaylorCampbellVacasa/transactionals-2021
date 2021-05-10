@@ -1,0 +1,142 @@
+<container>
+
+	<row>
+		<column class="padding-b-small left-col-item text-left mbl-pad-md" large="7" small="12">
+			<p class="reservation-unit-address">
+				<!-- {{{{raw-helper}}}} -->
+				<span class="reservation-unit-name"><strong>{{ UNIT_NAME }}</strong></span><br />
+				{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }}<br />
+				{{#if RESERVATION_UNIT_ADDRESS_ADDRESS_2 }}
+					{{RESERVATION_UNIT_ADDRESS_ADDRESS_2}}<br />
+				{{/if}}
+				{{ RESERVATION_UNIT_ADDRESS_CITY }}, {{ RESERVATION_UNIT_ADDRESS_STATE }} {{ RESERVATION_UNIT_ADDRESS_ZIP }}
+				<!-- {{{{/raw-helper}}}} -->
+			</p>
+		</column>
+		<column class="padding-b right-col-item text-left mbl-pad-md" large="5" small="12">
+			<!-- {{{{raw-helper}}}} -->
+			{{#if RESERVATION_LISTING_CHANNEL_RESERVATION_ID}}
+				{{#contains RESERVATION_CHANNEL "Airbnb"}}
+					Confirmation code: {{ RESERVATION_LISTING_CHANNEL_RESERVATION_ID }}
+				{{/contains}}
+				{{#contains RESERVATION_CHANNEL "Homeaway"}}
+					{{#if CONFIRMATION_CODE	 }}
+						<p class="reservation-number">Confirmation: {{ CONFIRMATION_CODE	 }}</p>
+					{{else}}
+						<p class="reservation-number">Reservation: {{ RESERVATION_ID }}</p>
+					{{/if}}
+				{{/contains}}
+			{{else}}
+				{{#if CONFIRMATION_CODE	 }}
+					<p class="reservation-number">Confirmation: {{ CONFIRMATION_CODE }}</p>
+				{{else}}
+					<p class="reservation-number">Reservation: {{ RESERVATION_ID }}</p>
+				{{/if}}
+			{{/if}}
+			<!-- {{{{/raw-helper}}}} -->
+		</column>
+	</row>
+</container>
+
+<container>
+	<row>
+		<column class="padding-b padding-t-small mbl-pad-sm">
+			<hr style="border-top:1px solid #CCD6DB; width: 100%; max-width:600px; height:1px;" />
+		</column>
+	</row>
+	<row class="reservation-details">
+		<column class="left-col-item padding-b-small mbl-pad-md" large="7" small="12">
+			<span class="info-prehead">Check in</span>
+			<p class="reservation-unit-date">
+				<!-- {{{{raw-helper}}}} -->
+				{{date RESERVATION_CHECKIN_DATE_RAW "ddd, MMM D, " datejs=false }}{{hour UNIT_CHECK_IN_TIME "h:mm a" }}
+				<!-- {{{{/raw-helper}}}} -->
+			</p>
+		</column>
+		<column class="right-col-item padding-b-small mbl-pad-md" large="5" small="12">
+			<span class="info-prehead">Check out</span>
+			<p class="reservation-unit-date">
+				<!-- {{{{raw-helper}}}} -->
+				{{date RESERVATION_CHECKOUT_DATE_RAW "ddd, MMM D, " datejs=false }}{{hour UNIT_CHECK_OUT_TIME "h:mm a" }}
+				<!-- {{{{/raw-helper}}}} -->
+			</p>
+		</column>
+	</row>
+	<row>
+		<column class="padding-t-small padding-b mbl-pad-sm">
+			<hr style="border-top:1px solid #CCD6DB; width: 100%; max-width:600px; height:1px;" />
+		</column>
+	</row>
+	<row class="reservation-details">
+		<column class="left-col-item mbl-pad-md padding-b" large="7" small="12">
+			<span class="info-prehead">Guests</span>
+			<p class="reservation-unit-date">
+				<!-- {{{{raw-helper}}}} -->
+				{{ RESERVATION_ADULTS }} Adults, {{ RESERVATION_CHILDREN }} children, {{ RESERVATION_PETS }} dog(s)
+				<!-- {{{{/raw-helper}}}} -->
+			</p>
+		</column>
+
+		</column>
+	</row>
+</container>
+<!-- {{{{raw-helper}}}} -->
+{{#compare RESERVATION_SOURCE_NAME "==" "Airbnb"}}
+	{{else}}
+		<!-- {{{{/raw-helper}}}} -->
+
+		<container>
+			<row>
+				<column class="left-btn padding-b-huge padding-t-xtra-large text-center mbl-pad-md">
+					{{> t_primary-button-side label="View Your Trip" url="{{{ TRIP_PORTAL_URL }}}" }}
+				</column>
+				<column large="5" small="0"></column>
+			</row>
+		</container>
+		<!-- {{{{raw-helper}}}} -->
+{{/compare}}
+<!-- {{{{/raw-helper}}}} -->
+
+<!-- {{{{raw-helper}}}} -->
+{{#compare RESERVATION_CITY_CITY "==" "Kiawah Island"}}
+	<!-- {{{{/raw-helper}}}} -->
+	<container>
+		<row>
+			<column class="padding-t">
+			</column>
+		</row>
+	</container>
+	<!-- {{{{raw-helper}}}} -->
+	{{> kiawah-good-neighbor }}
+	<!-- {{{{/raw-helper}}}} -->
+	<!-- {{{{raw-helper}}}} -->
+	<container>
+		<row>
+			<column class="padding-b">
+			</column>
+		</row>
+	</container>
+{{/compare}}
+<!-- {{{{/raw-helper}}}} -->
+
+<!-- {{{{raw-helper}}}} -->
+{{#compare RESERVATION_CITY_CITY "==" "Steamboat Springs"}}
+	<!-- {{{{/raw-helper}}}} -->
+	<container>
+		<row>
+			<column class="padding-t">
+			</column>
+		</row>
+	</container>
+	<!-- {{{{raw-helper}}}} -->
+	{{> steamboat-springs-lift-tickets }}
+	<!-- {{{{/raw-helper}}}} -->
+	<!-- {{{{raw-helper}}}} -->
+	<container>
+		<row>
+			<column class="padding-b">
+			</column>
+		</row>
+	</container>
+{{/compare}}
+<!-- {{{{/raw-helper}}}} -->

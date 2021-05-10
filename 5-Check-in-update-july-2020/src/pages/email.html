@@ -1,0 +1,551 @@
+<heml>
+
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+
+		<!-- inject-style src="src/CSS/tranactional-styles.css" -->
+		<style>
+			.bright {
+				color: #2daacc !important;
+				text-decoration: none !important;
+			}
+		</style>
+		<preview>We looking forward to hosting you at {{ RESERVATION_UNIT_NAME }}.</preview>
+	</head>
+
+	<body>
+		<!-- t_header-->
+		<container>
+			<row class="wht-header gutter full-width mbl-pad-md">
+				<column class="padding-b-huge padding-t-large">
+					<a
+						href="https://www.vacasa.com?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">
+						<img class="logo" infer="retina" src="https://vacasa-email.imgix.net/h_logo_light.png?w=370" alt="Vacasa"
+							style="mso-hide:all !important" />
+					</a>
+				</column>
+			</row>
+		</container>
+		<!--t_lead-->
+		<container class="lead">
+			<row>
+				<column class="text-left gutter padding-b mbl-pad-md">
+					<h1 class="small-head">Your trip to {{ RESERVATION_UNIT_ADDRESS_CITY }} is around the corner</h1>
+				</column>
+			</row>
+			<row>
+				<column class="text-left gutter padding-b-xtra-large mbl-pad-md">
+					<p class="sub-message">We looking forward to hosting you at {{ RESERVATION_UNIT_NAME }}.</p>
+				</column>
+			</row>
+		</container>
+		<!--t_quick_reservation_info_pane -->
+		<container class="res-info-pane pop-out" style="background: #ffffff;">
+			<row style="background: #f8f9f9;" class="text-center">
+				<column style="background: #f8f9f9;" large="0" small="12" class="padding-t mbl-img-row mbl-pad-md">
+					<a href="{{{ TRIP_PORTAL_URL }}}"><img infer="retina"
+							src="https://vacasa-units.imgix.net/{{{ UNIT_PRIMARY_IMAGE_ID }}}.jpg?w=1150&mask=corners&corner-radius=10,10,10,10&ar=4:1&fit=crop&crop=entropy,edges"
+							alt="Your Vacasa home image"></a>
+				</column>
+			</row>
+		</container>
+
+		<container class="res-info-pane" style="background: #ffffff;">
+			<row style="background: #f8f9f9;" class="res-info-pane top-row">
+				<column style="background: #f8f9f9;" large="2" small="0"
+					class="left-panel-item dis-none-cell-sm padding-t-large"><a href="{{{ TRIP_PORTAL_URL }}}"><img infer="retina"
+							src="https://vacasa-units.imgix.net/{{{ UNIT_PRIMARY_IMAGE_ID }}}.jpg?w=168&mask=corners&corner-radius=10,10,10,10&ar=1:1&fit=crop&crop=entropy,edges"
+							alt="Your Vacasa home image"></a>
+				</column>
+				<column style="background: #f8f9f9;" large="4" small="5" class="left-panel-item padding-t-large padding-b">
+					<a href="{{{ TRIP_PORTAL_URL }}}">
+						<span class="info-prehead up-case">Check in</span>
+
+						<p class="reservation-info-value">
+
+							{{ RESERVATION_CHECK_IN_TIME }}
+
+						</p>
+					</a>
+				</column>
+				<column style="background: #f8f9f9;" large="1" small="1" class="padding-b text-center icon-col">
+					<img class="icon" height="63" src="http://vacasa-email.imgix.net/carret.png?h=63" alt="Divider Icon">
+				</column>
+				<column style="background: #f8f9f9;" large="4" small="5"
+					class="right-panel-item padding-t-large padding-b text-right">
+					<a
+						href="{{{ TRIP_PORTAL_URL }}}&utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"><span
+							class="info-prehead up-case">Check out</span>
+
+						<p class="reservation-info-value">
+
+							{{ RESERVATION_CHECK_OUT_TIME }}
+
+						</p>
+					</a>
+
+				</column>
+				<column style="background: #f8f9f9; vertical-align: middle" large="1" small="0" class="dis-none-cell-sm">
+					<a
+						href="{{{ TRIP_PORTAL_URL }}}&utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"><img
+							class="link-icon desktop" src="http://vacasa-email.imgix.net/external-link.png?h=24"
+							alt="Click to view your reservation in the Trip Portal"></a>
+				</column>
+			</row>
+		</container>
+
+		<container>
+			<row>
+				<column class="padding-b-huge">
+				</column>
+			</row>
+		</container>
+
+		<!--GET THERE-->
+		<container>
+			<row>
+				<column class="text-left gutter padding-b mbl-pad-md">
+					<h2 class="t_bloc">Get there</h2>
+				</column>
+			</row>
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/65de9767-d39d-4ef9-ad1c-080db21f9e03/120x120.png"
+						alt="Get there">
+				</column>
+				<column large="10" small="8" class="text-left padding-b mbl-pad-md">
+					<h3 class="t_bloc padding-b-large">
+						<a class="bright"
+							href="https://www.google.com/maps/place/{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }},{{ RESERVATION_UNIT_ADDRESS_CITY }},{{ RESERVATION_UNIT_ADDRESS_STATE }}, {{ RESERVATION_UNIT_ADDRESS_ZIP }}"
+							target="_blank" style="color: #2daacc;text-decoration: none !important;">
+							<strong>{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }}<br />{{ RESERVATION_UNIT_ADDRESS_CITY }},
+								{{ RESERVATION_UNIT_ADDRESS_STATE }}, {{ RESERVATION_UNIT_ADDRESS_ZIP }}</strong>
+						</a>
+					</h3>
+				</column>
+			</row>
+			{{#if RESERVATION_DRIVING_DIRECTIONS}}
+				<row class="gutter">
+					<column class="text-left padding-b">
+						<p class="sub-message padding-b-small"><strong>Notes:</strong></p>
+						<p class="sub-message">{{ RESERVATION_DRIVING_DIRECTIONS }}</p>
+				</row>
+			{{/if}}
+			<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+		</container>
+		<container>
+			<row>
+				<column class="padding-b-huge">
+				</column>
+			</row>
+		</container>
+		<!--GET PARKED-->
+		<container>
+			<row>
+				<column class="text-left gutter padding-b mbl-pad-md">
+					<h2 class="t_bloc">Get parked</h2>
+				</column>
+			</row>
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/0b602a9d-ff9f-4024-adaa-f5c10cb324ef/120x120.png"
+						alt="Get parked">
+				</column>
+				<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+					<h3 class="t_bloc padding-b-small">
+						Dedicated spaces: {{UNIT_PARKING_TOTAL_CARS}}
+					</h3>
+					{{#if UNIT_GARAGE_PARKING}}
+					{{else}}
+						<p class="sub-message padding-b-small">
+							<strong>No garage parking</strong>
+						</p>
+					{{/if}}
+					<p class="sub-message padding-b-large">
+						{{#if UNIT_PARKING_NOTES}}
+							{{UNIT_PARKING_NOTES}}
+						{{/if}}
+					</p>
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+		</container>
+		<container>
+			<row>
+				<column class="padding-b-huge">
+				</column>
+			</row>
+		</container>
+		<!-- GET INSIDE -->
+		<container>
+			<row>
+				<column class="text-left gutter padding-b mbl-pad-md">
+					<h2 class="t_bloc">Get inside</h2>
+				</column>
+			</row>
+			{{#if RESERVATION_GATE_CODE}}
+				<row class="gutter">
+					<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+						<img width="60"
+							src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/f5adb096-5337-428b-9fd5-a1984eea322f/120x120.png"
+							alt="Gate code">
+					</column>
+					<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+
+						<h3 class="t_bloc padding-b-small">
+							Gate code: {{RESERVATION_GATE_CODE}}
+						</h3>
+						{{#if RESERVATION_GATE_CODE_NOTES}}
+							<p class="sub-message padding-b-large">
+								{{ RESERVATION_GATE_CODE_NOTES }}
+							</p>
+						{{/if}}
+						<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+					</column>
+				</row>
+			{{/if}}
+
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/a88df2d3-d301-45c9-bb62-0c65d6069241/120x120.png"
+						alt="Keypad code">
+				</column>
+				<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+					{{#if RESERVATION_E_LOCK_CODE}}
+						<h3 class="t_bloc padding-b-large">
+							Keypad code: {{RESERVATION_E_LOCK_CODE}}
+						</h3>
+					{{/if}}
+					{{#if RESERVATION_LOCKBOX_CODE}}
+						<h3 class="t_bloc padding-b-small">
+							Lockbox code: {{RESERVATION_LOCKBOX_CODE}}
+						</h3>
+					{{/if}}
+					{{#if RESERVATION_LOCKBOX_CODE_NOTES}}
+						<p class="sub-message padding-b-large">
+							{{ RESERVATION_LOCKBOX_CODE_NOTES }}
+						</p>
+					{{/if}}
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+		</container>
+		<container>
+			<row>
+				<column class="padding-b-huge">
+				</column>
+			</row>
+		</container>
+		<!--GET ONLINE-->
+		{{#if RESERVATION_WIFI}}
+			<container>
+				<row>
+					<column class="text-left gutter padding-b mbl-pad-md">
+						<h2 class="t_bloc">Get online</h2>
+					</column>
+				</row>
+				<row class="gutter">
+					<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+						<img width="60"
+							src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/343f27a1-bf36-426d-9c65-94faf0060b30/120x120.png"
+							alt="Get online">
+					</column>
+					<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+						<h3 class="t_bloc padding-b-small">
+							Network: {{ RESERVATION_WIFI_NETWORK }}
+						</h3>
+						<h3 class="t_bloc padding-b-small">
+							Password: {{ RESERVATION_WIFI_PASSWORD }}
+						</h3>
+						<p class="sub-message padding-b-large">
+							Connect to WiFi instantly with the <a class="bright"
+								href="https://vacasaguests.page.link/guest_app_download?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"
+								target="_blank">Vacasa app</a>.
+						</p>
+						<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+					</column>
+				</row>
+			</container>
+			<container>
+				<row>
+					<column class="padding-b-large">
+					</column>
+				</row>
+			</container>
+		{{/if}}
+
+		<!--TEMPORARY COLORADO TRAVEL ADVISORY-->
+		{{#compare RESERVATION_CITY_STATE "==" "CO"}}
+			<container>
+				<row>
+					<column class="text-left gutter padding-b mbl-pad-md">
+						<h2 class="t_bloc padding-b-small">Please note:</h2>
+						<p class="sub-message padding-b-small">We ask that you follow these rules during your stay, in compliance
+							with Colorado state guidelines.</p>
+						<ul class="sub-message">
+							<li style="padding-bottom: 6px;">Guests are encouraged to take their shoes off when entering the property.
+							</li>
+							<li style="padding-bottom: 6px;">Guests should wash their hands frequently with soap and water and/or use
+								hand sanitizer.</li>
+							<li style="padding-bottom: 6px;">Guests should wear cloth face coverings in public throughout Colorado. It
+								may be required in some communities.</li>
+							<li style="padding-bottom: 6px;">Guests should maintain physical distancing of at least 6 feet from people
+								not in their group/household while in Colorado.</li>
+							<li style="padding-bottom: 6px;">Guests must cancel their stay if they are sick or have been in close
+								contact with someone who is sick with COVID-19 symptoms in the 14 days before their stay.</li>
+						</ul>
+					</column>
+				</row>
+			</container>
+		{{/compare}}
+
+		<!--BEGIN APP SECTION-->
+		<container>
+			<row>
+				<column large="6" small="12" class="mobile-app mobile-app-left text-left">
+					<p class="app-preheader">
+						VACATION SMARTER
+						<!--[if mso]><br><br><![endif]-->
+						</div>
+					</p>
+					<h2 class="mobile-app-header">
+						Download the Vacasa&nbsp;app
+						<!--[if mso]><br><br><![endif]-->
+					</h2>
+					<p class="mobile-app-copy">
+						Get driving directions, 3D tours, instant WiFi connection, and early
+						check-in availability notifications. Offline mode means no more snapping
+						screenshots or searching your inbox.
+						<!--[if mso]><br><br><![endif]-->
+					</p>
+					<a
+						href="https://vacasaguests.page.link/guest_app_download?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">
+						<img inline
+							src="https://vacasa-www-images-stage.imgix.net/app-store-badge2x.png?auto=format%2Ccompress&ixlib=python-2.2.0&q=45&s=9a9607ccfa004a192f6eb23a796cc2c4"
+							class="mobile-app-apple-link-btn" width="108"
+							alt="Click to download the Vacasa mobile app in the Apple App Store" />
+					</a>
+					<a
+						href="https://vacasaguests.page.link/guest_app_download?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">
+						<img inline
+							src="https://vacasa-www-images-stage.imgix.net/google-play-badge2x.png?auto=format%2Ccompress&ixlib=python-2.2.0&q=45&s=a12535cc800801131edfbf96e23a9f73"
+							width="122" alt="Click to download the Vacasa mobile app in the Google Play Store" />
+					</a>
+				</column>
+				<column large="6" small="0" class="full-width-app-image mobile-app-right">
+					<a
+						href="https://vacasaguests.page.link/guest_app_download?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">
+						<img infer="retna" width="260" height="298.45"
+							src="https://www-vacasa.imgix.net/app-landing-hero2x.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=45&s=5f62c76b128aca3945601b4e71e983ea"
+							alt="The Vacasa mobile app on Apple and Android phones" />
+					</a>
+				</column>
+			</row>
+		</container>
+
+
+		<container class="pop-down">
+			<row>
+				<column large="0" small="12" class="gutter padding-b-large">
+					<a
+						href="https://vacasaguests.page.link/guest_app_download?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">
+						<img infer="retna" width="160"
+							src="https://www-vacasa.imgix.net/app-landing-hero2x.png?auto=format%2Ccompress&ixlib=python-3.0.0&q=45&s=5f62c76b128aca3945601b4e71e983ea"
+							style="margin: auto;" alt="The Vacasa mobile app on Apple and Android phones" />
+					</a>
+				</column>
+			</row>
+		</container>
+		<!--END APP SECTION-->
+		<container>
+			<row>
+				<column class="padding-b-large">
+				</column>
+			</row>
+		</container>
+		<container class="add-info">
+			<row>
+				<column class="padding-b text-gutter text-left mbl-pad-md">
+					<h2 class="t_bloc">Need help?</h2>
+				</column>
+			</row>
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						If you can't find the home
+					</h3>
+
+					<p class="body-text">
+						Try using <a class="bright"
+							href="https://www.google.com/maps/place/{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }},{{ RESERVATION_UNIT_ADDRESS_CITY }},{{ RESERVATION_UNIT_ADDRESS_STATE }}, {{ RESERVATION_UNIT_ADDRESS_ZIP }}"
+							target="_blank">
+							<strong>Google Maps</strong></a>, Apple Maps, or Waze. Call us at <a class="bright"
+							href="tel:+18005440300" target="_blank">800-544-0300</a> if you're still unable to find the home.</p>
+				</column>
+			</row>
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						If you need help with the lockbox or keypad
+					</h3>
+
+					<p class="body-text">
+						<a class="bright"
+							href="https://www.vacasa.com/go/lock-instructions?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"
+							target="_blank">Our guide</a> to lockboxes and smart locks can help. If you're still having trouble, call
+						us at <a class="bright" href="tel:+18005440300" target="_blank">800-544-0300</a>.</p>
+				</column>
+			</row>
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						If you can't connect to the internet
+					</h3>
+
+					<p class="body-text">
+						Unplug the router, then wait two minutes and plug it back in. Wait another two to five minutes before you
+						try to connect.</p>
+				</column>
+			</row>
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						Review or update your reservation
+					</h3>
+
+					<p class="body-text">
+						You can visit your Trip Manager or the Vacasa mobile app to view your reservation details and make changes
+						to your trip, like:</p>
+					<ul>
+						<li style="color:#373737; line-height: 26px;">Update the number of guests</li>
+						<li style="color:#373737; line-height: 26px;">View driving directions and parking instructions</li>
+						<li style="color:#373737; line-height: 26px;">See a list of the home’s amenities, including WiFi information
+						</li>
+						<li style="color:#373737; line-height: 26px;">Review check-in and check-out instructions</li>
+					</ul>
+					<p class="body-text">
+						<a class="bright" href="{{{ TRIP_PORTAL_URL }}}">Access
+							your Trip Manager&nbsp;&#8250;</a><br>
+						<a class="bright"
+							href="https://vacasaguests.page.link/reservation-resources-app?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">Download
+							the app&nbsp;&#8250;</a>
+					</p>
+				</column>
+			</row>
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						Cancel your reservation
+					</h3>
+					{{#if RESERVATION_VACASA_IS_MERCHANT_OF_RECORD }}
+						<p class="body-text">If you need to cancel your reservation for any reason, our worry-free booking policy
+							allows you to do so easily. Under this policy, you can cancel your reservation online up until 30 days
+							before check-in (or cancel for credit at any time, if your check-in date is through August 31).</p>
+						<ul class="body-text">
+							<li style="color:#373737; line-height: 26px;" class="body-text">You can cancel and receive a Future Stay
+								Credit for 100% of your reservation cost.
+								The credit is flexible, so you’re free to book the same home as before, or visit a different Vacasa home
+								or destination.</li>
+						</ul>
+						<p class="body-text" style="padding-left: 16px;"><a class="bright"
+								href="https://www.vacasa.com/go/cancel-trip?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"
+								rel="#" target="_blank">Cancel and
+								receive credit&nbsp;&#8250;</a></p>
+						<ul class="body-text">
+							<li style="color:#373737; line-height: 26px;" class="body-text">You also have the option to cancel and
+								receive a refund (minus the booking fee) in
+								your Trip Manager.</li>
+						</ul>
+						<p class="body-text" style="padding-left: 16px;"><a class="bright" href="{{{ TRIP_PORTAL_URL }}}"
+								target="_blank">Access your
+								Trip Manager&nbsp;&#8250;</a></p>
+					{{else}} {{#compare RESERVATION_CHANNEL "==" "Airbnb" }}
+							<p class="body-text">
+								Because you made your reservation through Airbnb, you will need to request a refund on their website.
+							</p>
+							<p class="body-text">How to cancel an Airbnb reservation
+								›</a></p>
+					{{else}}
+						<p class="body-text">
+							Because you made your reservation through {{ RESERVATION_CHANNEL }}, you will need to request a refund
+							through their app or website.</p>
+						{{/compare}}
+					{{/if}}
+				</column>
+			</row>
+
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						Additional resources
+					</h3>
+
+					<ul>
+						<li style="color:#373737; line-height: 26px;">Our <a class="bright"
+								href="https://www.vacasa.com/support/coronavirus-covid-19?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">COVID-19
+								guest resource guide</a> includes a list of travel restrictions that affect Vacasa vacation
+							destinations.</li>
+						<li style="color:#373737; line-height: 26px;">Information about planning your trip, Future Stay Credit, and
+							other topics can be found on our <a class="bright"
+								href="https://www.vacasa.com/support?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">Support
+								page.</a></li>
+					</ul>
+
+					</p>
+				</column>
+			</row>
+		</container>
+
+		<!--t_vacasa-footer -->
+		<container>
+			<row>
+				<column class="padding-t padding-b-large gutter mbl-pad-md">
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+			<row>
+				<column class="gutter padding-b-small mbl-pad-md">
+					<h3 class="vacasa-banner">
+						Book&nbsp;confidently. Stay&nbsp;comfortably.
+						<!--[if mso]><br /><br /><![endif]-->
+					</h3>
+				</column>
+			</row>
+			<row>
+				<column class="gutter padding-b-small mbl-pad-md">
+					<p class="vacasa-banner">
+						24/7&nbsp;support&nbsp;&nbsp;&nbsp;|&#32;&nbsp;&#32;Easy&nbsp;check-in&nbsp;&nbsp;&nbsp;|&#32;&nbsp;&#32;Professional&nbsp;cleaning
+					</p>
+				</column>
+			</row>
+			<row>
+				<column class="gutter padding-b-large padding-t mbl-pad-md">
+					<a
+						href="https://www.vacasa.com?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">
+						<img infer=retina height="24" src="http://vacasa-email.imgix.net/h_logo_light.png?h=48" alt="Vacasa" />
+					</a>
+				</column>
+			</row>
+			<row>
+				<column class="gutter mbl-pad-md">
+					<p class="footer-address">
+						&copy; 2020 Vacasa LLC | 850 NW 13th Ave., Portland, OR 97209
+					</p>
+				</column>
+			</row>
+			<row>
+				<column class="gutter mbl-pad-md padding-b">
+					<p class="privacy-terms">
+						<a href="https://www.vacasa.com/policies">Privacy</a> & <a
+							href="https://www.vacasa.com/terms-of-service">Terms</a>
+					</p>
+				</column>
+			</row>
+		</container>
+
+
+	</body>
+</heml>

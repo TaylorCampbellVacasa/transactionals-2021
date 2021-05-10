@@ -1,0 +1,96 @@
+<heml>
+
+	<head>
+		<preview>Book today on Vacasa.com</preview>
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+
+		<!-- inject-style src="src/CSS/base.css" -->
+		<!-- inject-style src="src/CSS/typography.css" -->
+		<!-- inject-style src="src/CSS/header-white.css" -->
+		<!-- inject-style src="src/CSS/buttons.css" -->
+		<!-- inject-style src="src/CSS/reservation.css" -->
+		<!-- inject-style src="src/CSS/vacasa-transactional-footer.css" -->
+		<style>
+			.bright {
+				color: #2daacc !important;
+				text-decoration: none !important;
+			}
+
+			@media only screen and (max-width: 500px) {
+
+				ul,
+				li {
+					font-size: 14px !important;
+					line-height: 20px !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<container>
+			<bonk></bonk>
+			<!--{{{{raw-helper}}}}-->
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						If you want to view or change trip details
+					</h3>
+
+					<p class="body-text">
+						Visit your <a href="{{{ TRIP_PORTAL_URL }}}" class="bright">Trip Manager</a> to review your reservation and
+						make changes, like:</p>
+					<ul style="margin-bottom: 0;">
+						<li style="color:#373737; line-height: 26px;">Update the number of guests</li>
+						<li style="color:#373737; line-height: 26px;">See a list of the home’s amenities, including WiFi information
+						</li>
+						<li style="color:#373737; line-height: 26px;">Review check-in and check-out instructions</li>
+					</ul>
+				</column>
+			</row>
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<h3 class="body-text">
+						If you need to cancel
+					</h3>
+					{{#if RESERVATION_VACASA_IS_MERCHANT_OF_RECORD }}
+						<p class="body-text">You can cancel and receive a Vacasa Future Stay Credit for your full reservation cost
+							up until 30 days before check-in—or at any time, if your check-in date is through August 31.</p>
+						<p class="body-text"><a class="bright"
+								href="https://www.vacasa.com/go/cancel-trip?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"
+								rel="#" target="_blank">Cancel and
+								receive credit&nbsp;&#8250;</a></p><br>
+						<p class="body-text">You can also check your <a class="bright" href="{{{ TRIP_PORTAL_URL }}}"
+								target="_blank">Trip Manager</a> to cancel and receive a refund (minus the booking fee) if your
+							reservation is eligible.</p>
+					{{else}} {{#compare RESERVATION_CHANNEL "==" "Airbnb" }}
+							<p class="body-text">
+								Because you made your reservation through Airbnb, you will need to request a refund on their website.
+							</p>
+							<p class="body-text"><a
+									href="https://www.airbnb.com/help/article/169/how-do-i-cancel-my-reservation-for-a-place-to-stay?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"
+									class="bright">How to cancel an Airbnb reservation&nbsp;&#8250;</a></p>
+					{{else}}
+						<p class="body-text">
+							Because you made your reservation through {{ RESERVATION_CHANNEL }}, you will need to request a refund on
+							their website.</p>
+						{{/compare}}
+					{{/if}}
+				</column>
+			</row>
+
+			<row>
+				<column class="padding-b-large text-gutter text-left mbl-pad-md">
+					<p class="body-text">
+						You can find additional help on our <a class="bright"
+							href="https://www.vacasa.com/support?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">Support
+							page</a> and our <a class="bright"
+							href="https://www.vacasa.com/support/coronavirus-covid-19?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in">COVID-19
+							guest resource guide</a>.
+					</p>
+				</column>
+			</row><!-- {{{{/raw-helper}}}} -->
+			<bonk></bonk>
+		</container>
+	</body>
+</heml>

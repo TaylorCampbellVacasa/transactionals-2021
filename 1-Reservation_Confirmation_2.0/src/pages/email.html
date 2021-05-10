@@ -1,0 +1,97 @@
+<heml>
+
+	<head>
+		<preview>Book today on Vacasa.com</preview>
+		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet" />
+
+		<!-- inject-style src="src/CSS/base.css" -->
+		<!-- inject-style src="src/CSS/typography.css" -->
+		<!-- inject-style src="src/CSS/header-white.css" -->
+		<!-- inject-style src="src/CSS/buttons.css" -->
+		<!-- inject-style src="src/CSS/reservation.css" -->
+		<!-- inject-style src="src/CSS/vacasa-transactional-footer.css" -->
+		<style>
+			.bright {
+				color: #2daacc !important;
+				text-decoration: none !important;
+			}
+
+			.affirm-container {
+				vertical-align: bottom;
+				padding-bottom: 20px !important;
+			}
+
+			.affirm-mobile-container {
+				display: none;
+			}
+
+			@media only screen and (max-width: 600px) {
+				.affirm-container {
+					padding-top: 0 !important;
+					padding-bottom: 0 !important;
+				}
+
+				.affirm-mobile-container {
+					display: initial !important;
+				}
+			}
+
+			@media only screen and (max-width: 500px) {
+
+				ul,
+				li {
+					font-size: 14px !important;
+					line-height: 20px !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div itemscope itemtype="http://schema.org/LodgingReservation">
+			<meta itemprop="reservationNumber"
+				content="{{#if CONFIRMATION_CODE}}{{CONFIRMATION_CODE}}{{else}}{{RESERVATION_ID}}{{/if}}" />
+			<link itemprop="reservationStatus" href="http://schema.org/Confirmed" />
+			<div itemprop="underName" itemscope itemtype="http://schema.org/Person">
+				<meta itemprop="name" content="{{RESERVATION_GUEST_FULL_NAME}}" />
+			</div>
+			<div itemprop="reservationFor" itemscope itemtype="http://schema.org/LodgingBusiness">
+				<meta itemprop="name" content="{{UNIT_NAME}}" />
+				<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<meta itemprop="streetAddress" content="{{RESERVATION_UNIT_ADDRESS_ADDRESS_1}}" />
+					<meta itemprop="addressLocality" content="{{RESERVATION_UNIT_ADDRESS_CITY}}" />
+					<meta itemprop="addressRegion" content="{{RESERVATION_UNIT_ADDRESS_STATE}} " />
+					<meta itemprop="postalCode" content="{{RESERVATION_UNIT_ADDRESS_ZIP}}" />
+					<meta itemprop="addressCountry" content="US" />
+					<meta itemprop="image" content="https://vacasa-units.imgix.net/{{{UNIT_PRIMARY_IMAGE_ID}}}.jpg">
+				</div>
+				<meta itemprop="telephone" content="1-800-544-0300" />
+			</div>
+			<meta itemprop="checkinDate" content="{{RESERVATION_CHECKIN_DATE_RAW}}" />
+			<meta itemprop="checkoutDate" content="{{RESERVATION_CHECKOUT_DATE_RAW}}" />
+			<meta itemprop="modifiedTime" content="{{RESERVATION_CREATION_DATE}}">
+			<meta itemprop="modifyReservationUrl" content="https://www.vacasa.com/login">
+			<meta itemprop="numAdults" content="{{RESERVATION_ADULTS}}">
+			<meta itemprop="numChildren" content="{{RESERVATION_CHILDREN}}">
+			<meta itemprop="price" content="{{RESERVATION_TOTAL}}">
+			<meta itemprop="lodgingUnitDescription" content="{{{UNIT_UNIT_TITLE}}}">
+			<meta itemprop="confirmReservationUrl"
+				content="{{{TRIP_PORTAL_URL}}}&utm_campaign=tx-1_guest-reservation-confirmation-B">
+			<meta itemprop="modifyReservationUrl"
+				content="{{{TRIP_PORTAL_URL}}}&utm_campaign=tx-1_guest-reservation-confirmation-B">
+		</div>
+		<container>
+			{{> t_header }}
+			{{> t_lead }}
+			{{> t_reservation-details }}
+			{{> t_vps-pet-fee }}
+			{{> t_add-guest }}
+			{{> t_reservation-receipt }}
+			{{> t_reservation-amenities }}
+			{{> t_home-access }}
+			{{> t_app-download }}
+			{{> t_reservation-add-info }}
+			{{> t_vacasa-footer }}
+		</container>
+	</body>
+</heml>
