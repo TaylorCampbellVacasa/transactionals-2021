@@ -49,7 +49,7 @@
 			<span class="info-prehead">Check in</span>
 			<p class="reservation-unit-date">
 				<!-- {{{{raw-helper}}}} -->
-				{{date RESERVATION_CHECKIN_DATE_RAW "ddd, MMM D, " datejs=false }}{{hour UNIT_CHECK_IN_TIME "h:mm a" }}
+				{{RESERVATION_CHECK_IN_TIME}}
 				<!-- {{{{/raw-helper}}}} -->
 			</p>
 		</column>
@@ -57,7 +57,7 @@
 			<span class="info-prehead">Check out</span>
 			<p class="reservation-unit-date">
 				<!-- {{{{raw-helper}}}} -->
-				{{date RESERVATION_CHECKOUT_DATE_RAW "ddd, MMM D, " datejs=false }}{{hour UNIT_CHECK_OUT_TIME "h:mm a" }}
+				{{RESERVATION_CHECK_OUT_TIME}}
 				<!-- {{{{/raw-helper}}}} -->
 			</p>
 		</column>
@@ -72,7 +72,7 @@
 			<span class="info-prehead">Guests</span>
 			<p class="reservation-unit-date">
 				<!-- {{{{raw-helper}}}} -->
-				{{ RESERVATION_ADULTS }} Adults, {{ RESERVATION_CHILDREN }} children, {{ RESERVATION_PETS }} dog(s)
+				{{ RESERVATION_ADULTS }} adults, {{ RESERVATION_CHILDREN }} children, {{ RESERVATION_PETS }} dog(s)
 				<!-- {{{{/raw-helper}}}} -->
 			</p>
 		</column>

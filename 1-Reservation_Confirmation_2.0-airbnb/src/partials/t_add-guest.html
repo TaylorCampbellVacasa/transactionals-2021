@@ -1,0 +1,36 @@
+<!-- {{{{raw-helper}}}} -->
+{{#compare RESERVATION_SOURCE_NAME "==" "Airbnb"}}
+	{{else}}
+		<!-- {{{{/raw-helper}}}} -->
+		<container>
+			<row>
+				<column class="gutter padding-b-large padding-t-large text-left">
+					<!--[if mso]><br /><br /><![endif]-->
+					<!-- {{{{raw-helper}}}} -->
+					<p class="body-text">Let your guests know that it's almost time to start packing for
+						{{ RESERVATION_UNIT_ADDRESS_CITY }}. Once added, they'll receive the details of your upcoming trip.
+					</p>
+					<!-- {{{{/raw-helper}}}} -->
+				</column>
+			</row>
+		</container>
+
+		<container>
+			<row class="">
+				<column class="left-btn padding-b-huge text-center mbl-pad-md">
+					{{> t_secondary-button-side-add label="Add Guests" url="{{{ADD_GUEST_URL}}}" }}
+				</column>
+				<column large="5" small="0"></column>
+			</row>
+		</container>
+
+		<container>
+			<row>
+				<column class="gutter padding-b-large">
+					<hr style="border-top:1px solid #CCD6DB; width: 100%; max-width:552px; height:1px;" />
+				</column>
+			</row>
+		</container>
+		<!-- {{{{raw-helper}}}} -->
+{{/compare}}
+<!-- {{{{/raw-helper}}}} -->

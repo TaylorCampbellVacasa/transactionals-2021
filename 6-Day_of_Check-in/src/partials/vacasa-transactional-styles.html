@@ -1,0 +1,1078 @@
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet">
+<style>
+	h1,
+	h2,
+	h3,
+	p,
+	a {
+		margin: 0;
+	}
+
+	container {
+		padding: 0px 0px;
+		max-width: 640px;
+		background-color: #fff !important
+	}
+
+	body {
+		background-color: #f5f7f8 !important;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	.responsive-container {
+		max-width: 648px;
+	}
+
+	a {
+		color: #003349 !important;
+		text-decoration: none;
+	}
+
+	.text-center {
+		text-align: center !important;
+	}
+
+	.text-left {
+		text-align: left !important;
+	}
+
+	.text-right {
+		text-align: right !important;
+	}
+
+	.gutter-xtra-large {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+
+	.gutter-large {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+
+	.gutter {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.text-gutter {
+		padding-left: 24px;
+		padding-right: 36px;
+	}
+
+	.padding-t-huge {
+		padding-top: 40px;
+	}
+
+	.padding-t-xtra-large {
+		padding-top: 32px;
+	}
+
+	.padding-t-large {
+		padding-top: 24px;
+	}
+
+	.padding-t {
+		padding-top: 16px;
+	}
+
+	.padding-t-small {
+		padding-top: 8px;
+	}
+
+	.padding-t-xtra-small {
+		padding-top: 4px;
+	}
+
+	.padding-b-huge {
+		padding-bottom: 40px;
+	}
+
+	.padding-b-xtra-large {
+		padding-bottom: 32px;
+	}
+
+	.padding-b-large {
+		padding-bottom: 24px;
+	}
+
+	.padding-b {
+		padding-bottom: 16px;
+	}
+
+	.padding-b-small {
+		padding-bottom: 8px;
+	}
+
+	.left-col-item-xl {
+		padding-left: 48px;
+		padding-right: 8px;
+	}
+
+	.right-col-item-xl {
+		padding-left: 8px;
+		padding-right: 48px;
+	}
+
+	.left-col-item {
+		padding-left: 24px;
+		padding-right: 4px;
+	}
+
+	.right-col-item {
+		padding-left: 4px;
+		padding-right: 24px;
+	}
+
+	.left-panel-item {
+		padding-left: 12px;
+		padding-right: 4;
+	}
+
+	.right-panel-item {
+		padding-left: 0;
+		padding-right: 12px;
+	}
+
+	.panel-item {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	h1,
+	h2,
+	h3,
+	p,
+	span,
+	a {
+		margin: 0;
+	}
+
+	h1,
+	h2,
+	h3 {
+		color: #2c3439;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 700;
+	}
+
+	p {
+		color: #000000;
+		font-family: "Nunito Sans", Arial, sans-serif;
+	}
+
+	ul {
+		color: #000000;
+		font-family: "Nunito Sans", Arial, sans-serif;
+	}
+
+	li {
+		color: #000000;
+		font-family: "Nunito Sans", Arial, sans-serif;
+	}
+
+	h1 {
+		height: auto;
+		font-size: 42px;
+		letter-spacing: -0.3px;
+		line-height: 47px;
+	}
+
+	h1.small-head {
+		font-size: 38px;
+		letter-spacing: -0.2px;
+		line-height: 44px;
+	}
+
+	h2 {
+		font-size: 28px;
+		letter-spacing: -0.5px;
+		line-height: 36px;
+	}
+
+	h2.sub {
+		font-size: 21px;
+		letter-spacing: -0.2px;
+		line-height: 28px;
+		font-weight: 400;
+	}
+
+	h2.t_bloc {
+		font-size: 24px;
+		letter-spacing: -0.2px;
+		line-height: 34px;
+		font-weight: 700;
+	}
+
+	h3.body-text {
+		color: #000000;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 26px;
+	}
+
+	p.sub-body {
+		font-size: 21px;
+		font-weight: 400;
+		line-height: 32px;
+	}
+
+	p.sub-message {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+
+	ul.sub-message {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+
+	li.sub-message {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+
+	p.body-text {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 26px;
+		color: #373737;
+	}
+
+	p.info-text {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.88px;
+		color: #4c5357;
+	}
+
+	p.unit-name {
+		color: #2c3439;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 21px;
+		font-weight: 400;
+		letter-spacing: -0.2px;
+		line-height: 28px;
+		overflow: hidden;
+		text-decoration: none;
+		text-overflow: ellipsis !important;
+		white-space: nowrap;
+		word-wrap: normal;
+	}
+
+	p.unit-attributes {
+		color: #707579;
+		font-size: 16px;
+		line-height: 24px;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.45px;
+	}
+
+	a {
+		color: #707579;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: 400;
+		line-height: 1.3;
+		text-decoration: none;
+	}
+
+	.up-case {
+		text-transform: uppercase;
+	}
+
+	h3.vacasa-banner {
+		margin: 0;
+		color: #2c3439;
+		font-size: 20px;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 700;
+		line-height: 36px;
+	}
+
+	p.vacasa-banner {
+		margin: 0;
+		height: auto;
+		color: #373737;
+		font-size: 14px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: normal;
+		line-height: 26px;
+	}
+
+	a.vacasa-banner {
+		color: #4d7080;
+	}
+
+	.unsubscribe-preferences-container {
+		padding-top: 32px;
+		padding-bottom: 8px;
+	}
+
+	.social-icon {
+		display: inline;
+	}
+
+	.social-icon.padding-right {
+		display: inline;
+		padding-right: 36px;
+	}
+
+	p.privacy-terms {
+		color: #004d70;
+		font-size: 14px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		line-height: 20px;
+		padding-bottom: 8px;
+		margin: 0;
+	}
+
+	p.footer-address {
+		color: #707579;
+		font-size: 14px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		line-height: 20px;
+		padding-bottom: 8px;
+		margin: 0;
+	}
+
+	.reservation-number {
+		color: #2c3439;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-size: 14px !important;
+		line-height: 20px !important;
+		font-weight: normal;
+	}
+
+	.reservation-unit-name {
+		color: #2c3439;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 18px;
+		line-height: 24px;
+		overflow: hidden !important;
+		text-decoration: none;
+		text-overflow: ellipsis !important;
+		white-space: nowrap !important;
+		word-wrap: normal;
+	}
+
+	.reservation-unit-address {
+		color: #000000;
+		font-size: 18px;
+		line-height: 24px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: 500;
+	}
+
+	.info-prehead {
+		color: #707579;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 22px;
+		word-wrap: none;
+	}
+
+	.add-info {
+		max-width: 640px !important;
+	}
+
+	.res-info-pane {
+		width: 100%;
+		max-width: 640px !important;
+		background-color: #ffffff !important;
+	}
+
+	.res-info-pane column {
+		background-color: #FFF !important;
+	}
+
+	.res-info-pane.top-row {
+		border-radius: 4px 4px 0 0;
+	}
+
+	.res-info-pane.bottom-row {
+		border-radius: 0 0 4px 4px;
+	}
+
+	.res-info-pane span.info-prehead {
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 16px;
+		word-wrap: none;
+		letter-spacing: 0.73px;
+	}
+
+	.reservation-info-value {
+		color: #373737;
+		font-size: 18px;
+		line-height: 24px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: 400;
+	}
+
+	.res-info-pane p.reservation-info-value {
+		font-size: 16px;
+		font-weight: 700 !important;
+	}
+
+	.res-info-pane p.reservation-info-value.lrg {
+		font-size: 36px;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		line-height: 48px;
+		font-weight: 400 !important;
+	}
+
+	.res-info-pane span.info-subhead {
+		color: #4c5357;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 12px;
+		font-weight: 700 !important;
+		line-height: 24px;
+		letter-spacing: 0.73px;
+	}
+
+	.res-info-pane .icon-col {
+		padding-top: 30px;
+	}
+
+	.res-info-pane img.icon {
+		margin: 0 auto;
+	}
+
+	.res-info-pane img.link-icon {
+		margin-left: 6px;
+		margin-right: auto;
+	}
+
+	.amenity-name span {
+		vertical-align: super;
+	}
+
+	.res-txt span {
+		color: rgb(55, 55, 55);
+		font-size: 18px;
+		line-height: 24px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: 500;
+	}
+
+	.row-divider {
+		border-top: 1px solid #ccd6db;
+		width: 426px;
+		height: 1px;
+	}
+
+	.icon-col {
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+
+	.icon-col-warn {
+		padding-left: 24px;
+		padding-right: 6px;
+	}
+
+	.res-warn-icon {
+		min-width: 20px;
+		margin: 0 auto;
+	}
+
+	.icon-text-gutter {
+		padding-left: 4px;
+		padding-right: 92px;
+	}
+
+	.pop-out {
+		display: none;
+		background-color: #f8f9f9;
+	}
+
+	.pop-out.top {
+		padding-top: 16px;
+	}
+
+	.pop-out.bottom {
+		padding-bottom: 16px;
+	}
+
+	.wht-header {
+		height: auto;
+	}
+
+	.wht-header-btn {
+		padding: 18px 24px 18px 18px;
+	}
+
+	.wht-header .logo {
+		height: 36px;
+	}
+
+	span.header-white-btn-txt {
+		font-size: 12px;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: bold;
+		text-align: right !important;
+		line-height: 20px;
+	}
+
+	table.button {
+		margin: 0px auto 0px auto !important;
+	}
+
+	.primary {
+		background-color: #ffd00a;
+		border: 1px solid #ffd00a;
+		border-radius: 4px;
+		color: #2c3439;
+		width: 100%;
+		min-width: 220px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 700;
+		text-align: center;
+		text-decoration: none;
+		white-space: nowrap;
+		display: inline-block;
+	}
+
+	.primary.slug {
+		max-width: 300px;
+		height: 56px;
+	}
+
+	.primary a {
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 700;
+		color: #2c3439;
+	}
+
+	.ghost {
+		font-size: 16px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		color: #0078ab;
+		text-decoration: none;
+		border-radius: 4px;
+		width: 100% !important;
+		border: 1px solid #0078ab;
+		background-color: #fff;
+		display: inline-block;
+		margin-top: 8px;
+		margin-bottom: 16px;
+	}
+
+	.ghost * {
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+		border: none !important;
+	}
+
+	.utility {
+		font-size: 16px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: 700;
+		line-height: 24px;
+		color: #003349;
+		text-decoration: none;
+		border-radius: 4px;
+		width: 100% !important;
+		border: 1px solid #003349;
+		background-color: #fff;
+		display: inline-block;
+	}
+
+	.utility * {
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+		border: none !important;
+	}
+
+	.secondary {
+		font-size: 16px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: 700;
+		line-height: 24px;
+		color: #0078ab;
+		text-decoration: none;
+		border-radius: 4px;
+		width: 100% !important;
+		border: 1px solid #0078ab;
+		background-color: #ffffff;
+		display: inline-block;
+	}
+
+	.secondary * {
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+		border: none !important;
+	}
+
+	.left-btn {
+		padding-left: 24px;
+		padding-right: 8px;
+	}
+
+	.right-btn {
+		padding-left: 8px;
+		padding-right: 24px;
+	}
+
+	.mobile-app-left {
+		padding-top: 24px;
+		padding-left: 24px;
+		padding-bottom: 24px;
+	}
+
+	.mobile-app-right {
+		padding-top: 24px;
+		padding-right: 24px;
+		padding-left: 16px;
+		padding-bottom: 24px;
+	}
+
+	.hero-background-image {
+		background-image: url("https://lh3.google.com/u/0/d/1lleS0xGBFIWqA4gs3ENsPXTpLqDE71dz=w3360-h1878-iv2");
+		background-color: #003349;
+		height: auto;
+		width: 100%;
+		max-width: 600px;
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.mobile-app {
+		word-wrap: normal;
+		-ms-word-wrap: normal;
+		color: #ffffff;
+	}
+
+	.app-preheader {
+		margin-top: 0;
+		margin-bottom: 16px;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0.5px;
+		font-weight: normal;
+		color: #2c3439;
+	}
+
+	.app-header.prehead {
+		margin-bottom: 8px;
+	}
+
+	.mobile-app-header {
+		margin-top: 0;
+		margin-bottom: 16px;
+		font-family: "Wigrum", Helvetica, Arial, sans-serif;
+		font-size: 34px;
+		line-height: 36px;
+		letter-spacing: initial;
+		color: #2c3439;
+	}
+
+	.mobile-app-header.text-only-section {
+		margin-top: 16px;
+		font-size: 24px;
+		line-height: 32px;
+		color: #2c3439;
+	}
+
+	.mobile-app p.mobile-app-copy {
+		font-size: 14px;
+		line-height: 20px;
+		color: #2c3439;
+		margin-bottom: 24px;
+	}
+
+	.mobile-app p.mobile-app-copy.text-only-section {
+		font-size: 18px;
+		font-family: "Nunito Sans", Arial, sans-serif;
+		font-weight: 500;
+		line-height: 24px;
+		color: #2c3439;
+		margin-bottom: 0;
+	}
+
+	.mobile-app p.mobile-app-copy.app-header {
+		margin-bottom: 12px;
+		margin-top: 8px;
+	}
+
+	.mobile-app-apple-link-btn {
+		margin-right: 8px;
+	}
+
+	.full-width-app-image img {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.pop-down {
+		display: none;
+		background-color: #ffe700;
+		color: #000000;
+		padding-top: 24px;
+	}
+
+	.pop-out-mobile {
+		display: none;
+		background-color: #ffe700;
+		color: #000000;
+		padding-top: 8px;
+	}
+
+	.pop-out-mobile img {
+		margin-right: auto;
+		height: auto;
+		max-height: 60px;
+		min-height: 30px;
+		width: auto;
+	}
+
+	.pop-down.app-header {
+		padding-top: 8px;
+		padding-bottom: 0;
+	}
+</style>
+<style heml-ignore>
+	/* 600px */
+	@media only screen and (max-width: 600px) {
+		body {
+			padding: 0 !important;
+		}
+
+		.mbl-pad-lg {
+			padding-left: 32px !important;
+			padding-right: 32px !important;
+		}
+
+		.mbl-pad {
+			padding-left: 24px !important;
+			padding-right: 24px !important;
+		}
+
+		.mbl-pad-md {
+			padding-left: 16px !important;
+			padding-right: 16px !important;
+		}
+
+		.mbl-pad-md-l {
+			padding-left: 16px !important;
+		}
+
+		.mbl-pad-md-r {
+			padding-right: 16px !important;
+		}
+
+		.mbl-pad-sm {
+			padding-left: 8px !important;
+			padding-right: 8px !important;
+		}
+
+		.mbl-pad-sm-l {
+			padding-left: 8px !important;
+		}
+
+		.mbl-pad-sm-r {
+			padding-right: 8px !important;
+		}
+
+		.mobile-pb {
+			padding-bottom: 16px !important;
+		}
+
+		.mobile-pb-small {
+			padding-bottom: 8px !important;
+		}
+
+		.fixed.left-col-item-xl,
+		.fixed.left-col-item {
+			padding-right: 4px !important;
+		}
+
+		.fixed.right-col-item-xl,
+		.fixed.right-col-item {
+			padding-left: 4px !important;
+		}
+
+		.left-panel-item {
+			padding-left: 16px !important;
+			padding-right: 4 !important;
+		}
+
+		.right-panel-item {
+			padding-left: 0 !important;
+			padding-right: 16px !important;
+		}
+
+		.panel-item {
+			padding-left: 16x !important;
+			padding-right: 16px !important;
+		}
+
+		.dis-none-cell-sm {
+			padding: 0 !important;
+			display: none !important;
+		}
+
+		h3.vacasa-banner {
+			font-size: 21px !important;
+			letter-spacing: -0.2px !important;
+			line-height: 28px !important;
+		}
+
+		p.vacasa-banner {
+			font-size: 12px !important;
+			letter-spacing: -0.2px !important;
+			line-height: 16px !important;
+		}
+
+		p.footer-address {
+			font-size: 12px !important;
+			letter-spacing: -0.2px !important;
+			line-height: 16px !important;
+		}
+
+		p.privacy-terms {
+			font-size: 12px !important;
+			letter-spacing: -0.2px !important;
+			line-height: 16px !important;
+		}
+
+		.icon-text-gutter {
+			padding-left: 16px !important;
+		}
+
+		.reservation-unit-name {
+			font-size: 16px !important;
+			line-height: 24px !important;
+		}
+
+		.reservation-unit-address {
+			font-size: 16px !important;
+			line-height: 24px !important;
+		}
+
+		.reservation-info-value {
+			font-size: 16px !important;
+			line-height: 24px !important;
+		}
+
+		.reservation-info-value.lrg {
+			font-size: 24px !important;
+			line-height: 28px !important;
+		}
+
+		.res-txt span {
+			font-size: 16px !important;
+			line-height: 24px !important;
+		}
+
+		.res-info-pane img.link-icon {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		.res-info-pane img.link-icon.desktop {
+			display: none !important;
+		}
+
+		.icon-col {
+			width: 16% !important;
+		}
+
+		.icon-col-warn {
+			padding-left: 16 !important;
+			padding-right: 0 !important;
+			margin-right: 0 !important;
+			margin-left: 0 !important;
+		}
+
+		.link-icon {
+			padding-bottom: 16px !important;
+		}
+
+		.row-divider {
+			width: 100% !important;
+
+			max-width: 600px !important;
+		}
+
+		.mbl-img-row {
+			padding-top: 16px !important;
+		}
+
+		.res-info-pane.top-row {
+			border-radius: 0 !important;
+		}
+
+		.res-info-pane.bottom-row {
+			border-radius: 0 !important;
+		}
+
+		.pop-out {
+			display: initial !important;
+		}
+
+		.wht-header-btn {
+			display: block !important;
+			width: 42% !important;
+		}
+
+		.wht-logo-container {
+			display: block !important;
+			width: 58% !important;
+		}
+
+		.primary {
+			font-size: 12px !important;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		.pop-down {
+			display: initial !important;
+		}
+
+		.pop-out-mobile {
+			display: initial !important;
+			background-color: #ffe700;
+			color: #000000;
+			padding-top: 8px;
+		}
+
+		.mobile-app-header.app-header {
+			font-size: 28px !important;
+			line-height: 36px !important;
+			letter-spacing: -0.2px !important;
+			margin-bottom: 8px !important;
+		}
+
+		.mobile-app-right {
+			padding: 0 !important;
+		}
+
+		.mobile-app-left {
+			padding-right: 24px !important;
+		}
+	}
+
+	/* 500px */
+	@media only screen and (max-width: 500px) {
+		h1 {
+			font-size: 38px !important;
+			letter-spacing: -0.5px !important;
+			line-height: 42px !important;
+		}
+
+		h1.small-head {
+			font-size: 32px !important;
+			letter-spacing: -0.5px !important;
+			line-height: 36px !important;
+		}
+
+		h2 {
+			font-size: 21px !important;
+			letter-spacing: -0.5px !important;
+			line-height: 28px !important;
+		}
+
+		h2.sub {
+			font-size: 18px !important;
+			letter-spacing: -0.2 !important;
+			line-height: 24px !important;
+		}
+
+		p.sub-body {
+			font-size: 16px !important;
+			font-weight: 400 !important;
+			line-height: 24px !important;
+		}
+
+		p.body-text {
+			font-size: 14px !important;
+			line-height: 20px !important;
+		}
+
+		p.unit-attributes {
+			font-size: 12px !important;
+			line-height: 16px !important;
+			letter-spacing: 0.38px !important;
+		}
+
+		.hero-background-image {
+			background-image: none !important;
+		}
+	}
+
+	/* 415px */
+	@media only screen and (max-width: 415px) {
+		.col-12-xs {
+			width: 100% !important;
+		}
+	}
+
+	@media only screen and (max-width: 400px) {
+		h1 {
+			font-size: 28px !important;
+			letter-spacing: -0.5px !important;
+			line-height: 36px !important;
+		}
+
+		h1.small-head {
+			font-size: 28px !important;
+			letter-spacing: -0.5px !important;
+			line-height: 36px !important;
+		}
+
+		h2.sub {
+			font-size: 16px !important;
+			letter-spacing: initial !important;
+			line-height: 24px !important;
+		}
+	}
+
+	@media only screen and (max-width: 350px) {
+		h1.small-head {
+			font-size: 21px !important;
+			letter-spacing: -0.5 !important;
+			line-height: 28px !important;
+		}
+
+		.wht-header-btn {
+			display: none !important;
+			width: 0 !important;
+		}
+
+		.wht-logo-container {
+			width: 100% !important;
+		}
+	}
+
+	@media only screen and (max-width: 300px) {
+		h1 {
+			font-size: 21px !important;
+			letter-spacing: -0.2px !important;
+			line-height: 28px !important;
+		}
+
+		h2.sub {
+			font-size: 16px !important;
+			letter-spacing: initial !important;
+			line-height: 24px !important;
+		}
+	}
+</style>

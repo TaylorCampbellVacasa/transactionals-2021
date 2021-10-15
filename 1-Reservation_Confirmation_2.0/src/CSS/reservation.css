@@ -77,7 +77,6 @@
   overflow: hidden !important;
   text-decoration: none;
   text-overflow: ellipsis !important;
-  white-space: nowrap !important;
   word-wrap: normal;
 }
 
@@ -198,7 +197,6 @@
 
 .res-warn-icon {
   min-width: 20px;
-  margin: 0 auto;
 }
 
 .icon-text-gutter {

@@ -1,14 +1,132 @@
 <!-- {{{{raw-helper}}}} -->
 <container class="lead">
 	<row>
-		<column class="text-left gutter padding-b mbl-pad-md">
-			<h1 class="small-head">Your Vacasa home is waiting</h1>
+		<column class="text-left gutter padding-b-small mbl-pad-md">
+			<h1 class="small-head">Welcome to your home away from home</h1>
 		</column>
 	</row>
 	<row>
 		<column class="text-left gutter padding-b-xtra-large mbl-pad-md">
-			<p class="sub-message">Here’s everything you need to know to get in the door.</p>
+			<p class="sub-message">{{RESERVATION_UNIT_NAME}} will be clean and ready for you at 4:00 p.m..
+			</p>
 		</column>
 	</row>
 </container>
+<container>
+	<row>
+		<column class="text-left gutter mbl-pad-md">
+			<p class="reservation-info-value padding-b"><strong>{{#if CONFIRMATION_CODE}}Confirmation:
+						{{{CONFIRMATION_CODE}}}{{else}}Reservation: {{{RESERVATION_ID}}}{{/if}}</strong></p>
+		</column>
+	</row>
+</container>
+<container>
+	<row>
+		<column class="gutter padding-b-xtra-large">
+			<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}"><img infer="retina" class="padding-b-small"
+					src="https://vacasa-units.imgix.net/{{{ UNIT_PRIMARY_IMAGE_ID }}}.jpg?w=640&mask=corners&corner-radius=8,8,8,8&ar=3:1&fit=crop&crop=entropy,edges"
+					alt="{{{ RESERVATION_UNIT_NAME }}}" style="width: 100%;max-width: 640px;"></a>
+		</column>
+	</row>
+</container>
+
+
+{{#compare STAY_LENGTH ">=" 2}}
+	<container class="lead">
+		<row>
+			<column class="text-left gutter padding-b mbl-pad-md">
+				{{#compare STAY_LENGTH "==" 2}}
+					<p class="sub-message">Still packing? Here's your {{ STAY_LENGTH }}-day forecast for
+						{{ RESERVATION_UNIT_ADDRESS_CITY }}:
+					</p>
+				{{/compare}}
+				{{#compare STAY_LENGTH "==" 3}}
+					<p class="sub-message">Still packing? Here's your {{ STAY_LENGTH }}-day forecast for
+						{{ RESERVATION_UNIT_ADDRESS_CITY }}:
+					</p>
+				{{/compare}}
+				{{#compare STAY_LENGTH "==" 4}}
+					<p class="sub-message">Still packing? Here's your {{ STAY_LENGTH }}-day forecast for
+						{{ RESERVATION_UNIT_ADDRESS_CITY }}:
+					</p>
+				{{/compare}}
+				{{#compare STAY_LENGTH "==" 5}}
+					<p class="sub-message">Still packing? Here's your {{ STAY_LENGTH }}-day forecast for
+						{{ RESERVATION_UNIT_ADDRESS_CITY }}:
+					</p>
+				{{/compare}}
+				{{#compare STAY_LENGTH "==" 6}}
+					<p class="sub-message">Still packing? Here's your {{ STAY_LENGTH }}-day forecast for
+						{{ RESERVATION_UNIT_ADDRESS_CITY }}:
+					</p>
+				{{/compare}}
+				{{#compare STAY_LENGTH "==" 7}}
+					<p class="sub-message">Still packing? Here's your {{ STAY_LENGTH }}-day forecast for
+						{{ RESERVATION_UNIT_ADDRESS_CITY }}:
+					</p>
+				{{/compare}}
+				{{#compare STAY_LENGTH ">" 7}}
+					<p class="sub-message">Still packing? Here's your 7-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}:</p>
+				{{/compare}}
+			</column>
+		</row>
+		<row>
+			<column class="text-left gutter padding-b-xtra-large mbl-pad-md">
+				{{#compare STAY_LENGTH "==" 2}}
+					<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}">
+						<img alt="Here's your {{ STAY_LENGTH }}-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}"
+							style="border: 0; display: block; width: 100%; max-width:180px;" border="0"
+							src="http://mi.vacasa.com/p/rp/735935887218d7ce.png?utm_campaign=tx-7_guest-reservation-dayof-check-in-B&utm_medium=email&utm_source=transactional&mi_u={{ RESERVATION_ID }}&mi_zip_preferred={{{RESERVATION_UNIT_ADDRESS_ZIP}}}" />
+					</a>
+				{{/compare}}
+				{{#compare STAY_LENGTH "==" 3}}
+					<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}">
+						<img alt="Here's your {{ STAY_LENGTH }}-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}"
+							style="border: 0; display: block; width: 100%; max-width:280px;" border="0"
+							src="http://mi.vacasa.com/p/rp/cbf34021180ff790.png?utm_campaign=tx-7_guest-reservation-dayof-check-in-B&utm_medium=email&utm_source=transactional&mi_u={{ RESERVATION_ID }}&mi_zip_preferred={{{RESERVATION_UNIT_ADDRESS_ZIP}}}" />
+					</a>
+				{{/compare}}
+				{{#compare STAY_LENGTH "==" 4}}
+					<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}">
+						<img alt="Here's your {{ STAY_LENGTH }}-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}"
+							style="border: 0; display: block; width: 100%; max-width:400px;" border="0"
+							src="http://mi.vacasa.com/p/rp/2099f173ec3b3e48.png?utm_campaign=tx-7_guest-reservation-dayof-check-in-B&utm_medium=email&utm_source=transactional&mi_u={{ RESERVATION_ID }}&mi_zip_preferred={{{RESERVATION_UNIT_ADDRESS_ZIP}}}" />
+					</a>
+				{{/compare}}
+
+				{{#compare STAY_LENGTH "==" 5}}
+					<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}">
+						<img alt="Here's your {{ STAY_LENGTH }}-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}"
+							style="border: 0; display: block; width: 100%; max-width:500px;" border="0"
+							src="http://mi.vacasa.com/p/rp/3c7f48d35124f1a3.png?utm_campaign=tx-7_guest-reservation-dayof-check-in-B&utm_medium=email&utm_source=transactional&mi_u={{ RESERVATION_ID }}&mi_zip_preferred={{{RESERVATION_UNIT_ADDRESS_ZIP}}}" />
+					</a>
+				{{/compare}}
+
+				{{#compare STAY_LENGTH "==" 6}}
+					<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}">
+						<img alt="Here's your {{ STAY_LENGTH }}-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}"
+							style="border: 0; display: block; width: 100%; max-width:640px;" border="0"
+							src="http://mi.vacasa.com/p/rp/4698cd17bdffeedf.png?utm_campaign=tx-7_guest-reservation-dayof-check-in-B&utm_medium=email&utm_source=transactional&mi_u={{ RESERVATION_ID }}&mi_zip_preferred={{{RESERVATION_UNIT_ADDRESS_ZIP}}}" />
+					</a>
+				{{/compare}}
+
+				{{#compare STAY_LENGTH "==" 7}}
+					<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}">
+						<img alt="Here's your {{ STAY_LENGTH }}-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}"
+							style="border: 0; display: block; width: 100%; max-width:640px;" border="0"
+							src="http://mi.vacasa.com/p/rp/e4df98081f12d691.png?utm_campaign=tx-7_guest-reservation-dayof-check-in-B&utm_medium=email&utm_source=transactional&mi_u={{ RESERVATION_ID }}&mi_zip_preferred={{{RESERVATION_UNIT_ADDRESS_ZIP}}}" />
+					</a>
+				{{/compare}}
+
+				{{#compare STAY_LENGTH ">" 7}}
+					<a heml-ignore clicktracking=off href="{{{ TRIP_PORTAL_URL }}}">
+						<img alt="Here's your 7-day forecast for {{ RESERVATION_UNIT_ADDRESS_CITY }}"
+							style="border: 0; display: block; width: 100%; max-width:640px;" border="0"
+							src="http://mi.vacasa.com/p/rp/e4df98081f12d691.png?utm_campaign=tx-7_guest-reservation-dayof-check-in-B&utm_medium=email&utm_source=transactional&mi_u={{ RESERVATION_ID }}&mi_zip_preferred={{{RESERVATION_UNIT_ADDRESS_ZIP}}}" />
+					</a>
+				{{/compare}}
+			</column>
+		</row>
+	</container>
+{{/compare}}
 <!-- {{{{/raw-helper}}}} -->

@@ -1,14 +1,3 @@
-@media only screen and (max-width: 600px) {
-  .check-in h3.body-text {
-    font-size: 16px !important;
-    line-height: 28px !important;
-  }
-  .check-in p.body-text,
-  .check-in span.body-text {
-    font-size: 16px !important;
-    line-height: 26px !important;
-  }
-}
 @media only screen and (max-width: 500px) {
   h1 {
     font-size: 38px !important;
@@ -106,13 +95,14 @@ h1,
 h2,
 h3 {
   color: #2c3439;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: Calluna, "Taviraj", Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
 }
 
 p {
-  color: #000000;
+  color: #2c3439;
   font-family: "Nunito Sans", Arial, sans-serif;
+  font-weight: 300;
 }
 
 h1 {
@@ -148,52 +138,36 @@ h2.t_bloc {
   font-weight: 700;
 }
 
-.check-in h3.body-text {
-  color: #373737;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 28px;
-}
-
-.check-in h3.body-text.address-link {
-  color: #2daacc;
-}
-
-.check-in p.body-text,
-.check-in span.body-text {
-  color: #373737;
+h3.body-text {
+  color: #000000;
   font-family: "Nunito Sans", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-}
-.check-in span.body-text {
-  color: #2c3439;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
 }
 
 p.sub-body {
-  font-size: 21px;
-  font-weight: 400;
-  line-height: 32px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 28px;
 }
 
 p.sub-message {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 p.body-text {
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
-  color: #373737;
+  color: #2c3439;
 }
 
 p.info-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -203,9 +177,9 @@ p.info-text {
 
 p.unit-name {
   color: #2c3439;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", Arial, sans-serif;
   font-size: 21px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: -0.2px;
   line-height: 28px;
   overflow: hidden;
@@ -219,8 +193,8 @@ p.unit-attributes {
   color: #707579;
   font-size: 16px;
   line-height: 24px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.45px;
 }
@@ -233,6 +207,21 @@ a {
   text-decoration: none;
 }
 
-.up-case {
-  text-transform: uppercase;
+.pet-fee-header {
+  font-weight: 700;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
+  text-align: left;
+}
+
+.pet-fee-body {
+  font-family: "Nunito Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0;
+  text-align: left;
+  display: block;
+  font-weight: 400;
 }

@@ -3,8 +3,8 @@
 	<row class="wht-header gutter full-width mbl-pad-md">
 		<column class="padding-b-small padding-t-large">
 			<a href="https://www.vacasa.com">
-				<img inline class="logo" infer="retina" src="https://vacasa-email.imgix.net/h_logo_light.png?w=370" alt=""
-					style="mso-hide:all !important; vertical " />
+				<img inline class="" infer="retina" src="http://vacasa-email.imgix.net/New_Logo2021.png?w=370" alt=""
+					style="mso-hide:all !important; vertical-align: bottom;" />
 				<span class="hide-mbl">
 					{{#compare RESERVATION_CHANNEL "==" "Marriott Homes & Villas"}}<span style="color: rgb(112, 117, 121); font-size: 18px;font-family: 'Helvetica Neue' , Helvetica, Arial,
 					sans-serif;">&nbsp;&nbsp;<img class="icon" inline src="http://vacasa-email.imgix.net/v-line.png?h=36"
@@ -26,7 +26,7 @@
 				</span>
 
 				<span class="hide-mbl">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{#compare RESERVATION_CHANNEL "==" "Booking.com"}}<span style="color: rgb(112, 117, 121); font-size: 18px;font-family: 'Helvetica Neue' , Helvetica, Arial,
+					&nbsp;&nbsp;{{#compare RESERVATION_CHANNEL "==" "Booking.com"}}<span style="color: rgb(112, 117, 121); font-size: 18px;font-family: 'Helvetica Neue' , Helvetica, Arial,
 					sans-serif;">booked&nbsp;with&nbsp;&nbsp;</span><img style="vertical-align:-8px;" inline infer="retina"
 						src="https://vacasa-email.imgix.net/partner-logo-booking.com.png?h=72&fit=crop" alt="" />
 					{{/compare}}
@@ -102,6 +102,10 @@
 							src="http://cdn.mcauto-images-production.sendgrid.net/fc2fa22bf8f6e266/766ee52d-2af7-4129-a70b-c12bb1c99918/284x100.png"
 							alt="" />
 					{{/compare}}
+					{{#compare RESERVATION_CHANNEL "==" "412"}}<span style="color: rgb(112, 117, 121); font-size: 18px;font-family: 'Helvetica Neue' , Helvetica, Arial,
+					sans-serif;">booked&nbsp;with&nbsp;&nbsp;</span><img style="vertical-align:-1px;width: 100px;" inline
+							infer=" retina" src="http://vacasa-email.imgix.net/latitude38-logo.png?w=300" alt="" />
+					{{/compare}}
 				</span>
 			</a>
 		</column>
@@ -176,6 +180,10 @@
 					sans-serif;">booked&nbsp;with&nbsp;&nbsp;</span><img style="width: 80px;" inline infer=" retina"
 						src="http://cdn.mcauto-images-production.sendgrid.net/fc2fa22bf8f6e266/766ee52d-2af7-4129-a70b-c12bb1c99918/284x100.png"
 						alt="" />
+				{{/compare}}
+				{{#compare RESERVATION_CHANNEL "==" "412"}}<span style="color: rgb(112, 117, 121); font-size: 18px;font-family: 'Helvetica Neue' , Helvetica, Arial,
+					sans-serif;">booked&nbsp;with&nbsp;&nbsp;</span><img style="width: 80px;" inline infer=" retina"
+						src="http://vacasa-email.imgix.net/latitude38-logo.png?w=300" alt="" />
 				{{/compare}}
 		</column>
 	</row>

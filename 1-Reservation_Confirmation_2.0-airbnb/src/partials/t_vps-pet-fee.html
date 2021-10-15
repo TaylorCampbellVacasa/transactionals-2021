@@ -1,0 +1,29 @@
+<!-- {{{{raw-helper}}}} -->
+{{#contains RESERVATION_CHANNEL "Bluetent_VPS"}}
+	{{#if UNIT_AMENITIES_MAP_PETS}}
+		<container>
+			<row style="background-color: #003349;">
+				<column class=" gutter text-left padding-b-small padding-t-large mbl-pad-md" style="color: #ffffff;">
+
+					<h3 class="t_bloc pet-fee-header">
+						<img inline infer="retina" style="height: 24px; width: auto;     vertical-align: middle;"
+							src="http://cdn.mcauto-images-production.sendgrid.net/fc2fa22bf8f6e266/a37ff55e-41be-47ee-9f61-2ec3e416f738/175x143.png"
+							alt=""><span>&nbsp;&nbsp;Planning on bringing your dog?</span>
+					</h3>
+				</column>
+			</row>
+			<row style="background-color: #003349;">
+				<column class="gutter text-left padding-b-large mbl-pad-md" style="color: #ffffff;">
+
+					<p class="pet-fee-body">
+						Good news, pet owners: {{ UNIT_NAME }} is a dog-friendly home. If you’re planning to bring Fido on your
+						vacation, we’ll need to update your reservation to include a pet fee. Please contact us at <a
+							href="tel:18005440300"><span style="color: #FFD00A;">800&#8209;544&#8209;0300</span></a> to
+						update your reservation.
+					</p>
+				</column>
+			</row>
+		</container>
+	{{/if}}
+{{/contains}}
+<!-- {{{{/raw-helper}}}} -->

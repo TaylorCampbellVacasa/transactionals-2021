@@ -1,0 +1,46 @@
+<!-- {{{{raw-helper}}}} -->
+<container class="add-info">
+	<row>
+		<column class="padding-b-large padding-t-large text-gutter text-left mbl-pad-md">
+			<h2 class="t_bloc">{{#if UNITS_WARNING_EMAIL_COPY }}Additional info{{else}}Support for you upcoming trip{{/if}}
+			</h2>
+			{{> tx-1-camd-ccrs }}
+			{{#if UNITS_WARNING_EMAIL_COPY }}
+				<div>
+					<table width="100%" align="center" role="presentation" border="0" cellpadding="0" cellspacing="0"
+						style="table-layout: fixed;">
+						<tr>
+							<td class="mbl-pad-md column col-sm-12" width="640"
+								style="padding-left: 24px; padding-right: 36px; padding-bottom: 24px;width: 100%; text-align: left"
+								align="left" valign="top">
+								<h3 class="body-text header h3"
+									style="margin: 0; color: #000000; font-family: 'Nunito Sans',Arial,sans-serif; font-size: 16px; font-weight: 700; line-height: 26px; text-align: left;">
+									Please Note
+								</h3>
+								<p class="body-text text p"
+									style="display: block; margin: 0; font-family: 'Nunito Sans',Arial,sans-serif; font-size: 16px; font-weight: 400; color: #373737; line-height: 26px; text-align: left;">
+									{{{ UNITS_WARNING_EMAIL_COPY }}}
+								</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			{{/if}}
+			<container>
+				<row>
+					<column large="1" small="1" class="icon-col-warn mbl-pad-md-l padding-t-xtra-small res-warn-icon">
+						<img infer="retina" class="res-warn-icon"
+							src="http://vacasa-email.imgix.net/icon-tier1-exclamation-circle.png?w=40" alt="Important information">
+					</column>
+					<column large="11" small="11" class="icon-text-gutter padding-b-large mbl-pad-md-r">
+						<p class="info-text">We may send you text messages as part of this transaction, before check-in and
+							shortly
+							after
+							check-out. These messages could include a link to download and manage your reservation in our mobile
+							app
+							and/or
+							a link to leave a review of your stay.</p>
+					</column>
+				</row>
+			</container>
+			<!-- {{{{/raw-helper}}}} -->

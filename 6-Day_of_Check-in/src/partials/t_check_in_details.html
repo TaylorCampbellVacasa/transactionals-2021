@@ -1,170 +1,433 @@
 <!-- {{{{raw-helper}}}} -->
-<container class="add-info check-in">
-	<!-- DIRECTIONS -->
+<!-- GET INSIDE -->
+{{#or RESERVATION_GATE_CODE RESERVATION_GATE_CODE RESERVATION_GATE_CODE_NOTES RESERVATION_LOCKBOX_CODE RESERVATION_LOCKBOX_CODE_NOTES RESERVATION_E_LOCK_CODE UNIT_ALARM_CODE RESERVATION_ALARM_CODE_NOTES UNIT_LOCKBOX_NOTES}}
+	<container>
+		<row>
+			<column class="text-left gutter padding-b mbl-pad-md">
+				<h2 class="t_bloc">Get inside</h2>
+			</column>
+		</row>
+
+
+
+		{{#if RESERVATION_GATE_CODE}}
+			{{#contains RESERVATION_GATE_CODE "NA"}}
+		{{else}}
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/f5adb096-5337-428b-9fd5-a1984eea322f/120x120.png"
+						alt="Gate code">
+					<p class="padding-b-large">&nbsp;</p>
+				</column>
+				<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+					<h3 class="t_bloc" style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;"><strong>Gate
+							code:</strong> {{RESERVATION_GATE_CODE}}</h3>
+					{{#if RESERVATION_GATE_CODE_NOTES}}
+						<p class="sub-message padding-t">{{ RESERVATION_GATE_CODE_NOTES }}</p>
+					{{/if}}
+					<p class="padding-b-large">&nbsp;</p>
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+			{{/contains}}
+		{{/if}}
+
+
+		{{#if RESERVATION_E_LOCK_CODE}}
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/a88df2d3-d301-45c9-bb62-0c65d6069241/120x120.png"
+						alt="Lockbox code">
+					<p class="padding-b-large">&nbsp;</p>
+				</column>
+				<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+					<h3 class="t_bloc" style="font-family: 'Nunito Sans', Arial, sans-serif;">Keypad code:
+						{{{ RESERVATION_E_LOCK_CODE }}}
+					</h3>
+					{{#if RESERVATION_LOCKBOX_CODE_NOTES}}
+						<p class=" sub-message padding-t-small">{{{ RESERVATION_LOCKBOX_CODE_NOTES }}}</p>
+					{{/if}}
+					<p class="padding-b-large">&nbsp;</p>
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+		{{else if RESERVATION_LOCK_TYPE}}
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/a88df2d3-d301-45c9-bb62-0c65d6069241/120x120.png"
+						alt="Lockbox code">
+					<p class="padding-b-large">&nbsp;</p>
+				</column>
+				<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+					{{#compare RESERVATION_LOCK_TYPE "==" "LOCKBOX"}}
+						{{#contains RESERVATION_LOCKBOX_CODE "desk"}}
+							<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+								{{{ RESERVATION_LOCKBOX_CODE }}}
+							</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "Vacasa"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_LOCKBOX_CODE }}}
+			</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "in-person"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_LOCKBOX_CODE }}}
+			</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "office"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_LOCKBOX_CODE }}}
+			</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "key"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_LOCKBOX_CODE }}}
+			</h3>
+		{{else}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">Lockbox code:
+				{{{ RESERVATION_LOCKBOX_CODE }}}</h3>
+						{{/contains}}
+		{{else compare RESERVATION_LOCK_TYPE "==" "ELOCK"}}
+			{{#contains RESERVATION_LOCKBOX_CODE "desk"}}
+				<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+					{{{ RESERVATION_E_LOCK_CODE }}}
+				</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "Vacasa"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_E_LOCK_CODE }}}
+			</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "in-person"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_E_LOCK_CODE }}}
+			</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "office"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_E_LOCK_CODE }}}
+			</h3>
+		{{else contains RESERVATION_LOCKBOX_CODE "key"}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+				{{{ RESERVATION_E_LOCK_CODE }}}
+			</h3>
+		{{else}}
+			<h3 style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">Keypad code:
+				{{{ RESERVATION_E_LOCK_CODE }}}
+			</h3>
+			{{/contains}}
+
+					{{/compare}}
+					{{#if RESERVATION_LOCKBOX_CODE_NOTES}}
+						<p class="sub-message padding-t-small">{{{ RESERVATION_LOCKBOX_CODE_NOTES }}}</p>
+					{{/if}}
+					<p class="padding-b-large">&nbsp;</p>
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+		{{else}}
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/a88df2d3-d301-45c9-bb62-0c65d6069241/120x120.png"
+						alt="Lockbox code">
+					<p class="padding-b-large">&nbsp;</p>
+				</column>
+				<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+					{{#if RESERVATION_LOCKBOX_CODE_NOTES}}
+						<p style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;"
+							class="sub-message padding-t-small">{{{ RESERVATION_LOCKBOX_CODE_NOTES }}}</p>
+					{{/if}}
+					<p class="padding-b-large">&nbsp;</p>
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+		{{/if}}
+
+		{{#if UNIT_ALARM_CODE}}
+			<!--ALARM CODE-->
+			<row class="gutter">
+				<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+					<img width="60"
+						src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/07857f63-bf2a-45ff-a10d-cbd6c111f196/120x120.png"
+						alt="Alarm code">
+					<p class="padding-b-large">&nbsp;</p>
+				</column>
+				<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+					<h3 class="t_bloc"
+						style="font-weight:normal; font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;"><strong>Alarm
+							code:</strong> {{UNIT_ALARM_CODE}}</h3>
+					{{#if RESERVATION_ALARM_CODE_NOTES}}
+						<p class="sub-message padding-t">{{ RESERVATION_ALARM_CODE_NOTES }}</p>
+					{{/if}}
+					<p class="padding-b-large">&nbsp;</p>
+					<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+				</column>
+			</row>
+		{{/if}}
+
+	</container>
+{{/or}}
+
+<container>
 	<row>
-		<column class="padding-b-large text-gutter text-left mbl-pad-md">
+		<column class="padding-b">
+		</column>
+	</row>
+</container>
+
+<!-- DIRECTIONS -->
+<container>
+	<row>
+		<column class="text-left gutter padding-b mbl-pad-md">
 			<h2 class="t_bloc">Get there</h2>
 		</column>
 	</row>
-	<row>
-		<column large="2" small="2" class="padding-b-large left-col-item">
-			<img style="margin: 0 auto;" src="http://vacasa-email.imgix.net/icon-tier1-location.png?h=36" alt="Divider Icon">
+	<row class="gutter">
+		<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+			<img width="60"
+				src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/65de9767-d39d-4ef9-ad1c-080db21f9e03/120x120.png"
+				alt="Get there">
+			<p class="padding-b-large">&nbsp;</p>
 		</column>
-		<column large="10" small="10" class="padding-b-large text-left mbl-pad-md">
-			<a href="{{{ GOOGLE_ADDRESS_URL }}}">
-				<h3 class="body-text address-link">
-
-					{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }}<br />
-					{{#if RESERVATION_UNIT_ADDRESS_ADDRESS_2 }}
-						{{RESERVATION_UNIT_ADDRESS_ADDRESS_2}}<br />
-					{{/if}}
-					{{ RESERVATION_UNIT_ADDRESS_CITY }}, {{ RESERVATION_UNIT_ADDRESS_STATE }}
-					{{ RESERVATION_UNIT_ADDRESS_ZIP }}
-				</h3>
-			</a>
-			{{#if RESERVATION_DRIVING_DIRECTIONS}}
-				<p class="body-text">
-					{{{RESERVATION_DRIVING_DIRECTIONS}}}
-				</p>
-			{{/if}}
-		</column>
-	</row>
-
-	<!-- PARKING -->
-	<row>
-		<column class="padding-b-large text-gutter text-left mbl-pad-md">
-			<h2 class="t_bloc">Get parked</h2>
-		</column>
-	</row>
-	<row>
-		<column large="2" small="2" class="padding-b-large left-col-item">
-			<img style="margin: 0 auto;" src="http://vacasa-email.imgix.net/icon-car-two.png?h=36" alt="Divider Icon">
-		</column>
-		<column large="10" small="10" class="padding-b-large text-left mbl-pad-md">
-			<h3 class="body-text">
-				Dedicated parking spaces: <span class="body-text">{{ UNIT_PARKING_TOTAL_CARS }}</span><br />
-				{{#if RESERVATION_GARAGE_PARKING}}
-					Garage parking available
-				{{else}}
-					No garage parking
-				{{/if}}
+		<column large="10" small="8" class="text-left padding-b mbl-pad-md">
+			<h3 class="t_bloc" style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;">
+				<!--192 Hemlock Forrest ,Mineral,VA, 23117-->
+				<a class="bright"
+					href="https://www.google.com/maps/place/{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }}%2C%20{{ RESERVATION_UNIT_ADDRESS_CITY }}%2C%20{{ RESERVATION_UNIT_ADDRESS_STATE }}%20 {{ RESERVATION_UNIT_ADDRESS_ZIP }}"
+					target="_blank">
+					<strong>{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }}<br />{{ RESERVATION_UNIT_ADDRESS_CITY }},
+						{{ RESERVATION_UNIT_ADDRESS_STATE }}, {{ RESERVATION_UNIT_ADDRESS_ZIP }}</strong>
+				</a>
 			</h3>
-			<p class="body-text">
-				{{{ RESERVATION_PARKING_NOTES }}}
-			</p>
-		</column>
-	</row>
-
-	<!-- ACCESS -->
-	<row>
-		<column class="padding-b-large text-gutter text-left mbl-pad-md">
-			<h2 class="t_bloc">Get inside</h2>
-		</column>
-	</row>
-	{{#if RESERVATION_GATE_CODE}}
-		<row>
-			<column large="2" small="2" class="padding-b-large left-col-item">
-				<img style="margin: 0 auto;" src="http://vacasa-email.imgix.net/icon-door.png?h=36" alt="Divider Icon">
-			</column>
-			<column large="10" small="10" class="padding-b-large text-left mbl-pad-md">
-				<h3 class="body-text">Gate code: <span class="body-text">{{ RESERVATION_GATE_CODE }}</span>
-				</h3>
-				<p class="body-text">
-					{{{ RESERVATION_GATE_CODE_NOTES }}}</p><br />
-				<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
-
-			</column>
-		</row>
-	{{/if}}
-	<row>
-		<column large="2" small="2" class="padding-b-large left-col-item">
-			<img style="margin: 0 auto;" src="http://vacasa-email.imgix.net/icon-key.png?h=36" alt="Divider Icon">
-		</column>
-		<column large="10" small="10" class="padding-b-large text-left mbl-pad-md">
-			<h3 class="body-text">Lockbox code: <span class="body-text">{{ RESERVATION_LOCKBOX_CODE }}</span>
-			</h3>
-			<p class="body-text">
-				{{{ RESERVATION_LOCKBOX_CODE_NOTES }}}</p><br />
+			{{#if RESERVATION_DRIVING_DIRECTIONS	 }}
+				{{#contains RESERVATION_DRIVING_DIRECTIONS "https://www.google.com/maps/place/"}}
+			{{else}}
+				<p class="padding-t sub-message">Find more detailed directions at the end of this email.</p>
+				{{/contains}}
+			{{else}}{{/if}}
+			<p class="padding-b-large">&nbsp;</p>
 			<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
 		</column>
 	</row>
+</container>
+<container>
+	<row>
+		<column class="padding-b">
+		</column>
+	</row>
+</container>
 
-	{{#if RESERVATION_ALARM_CODE}}
-		<row>
-			<column large="2" small="2" class="padding-b-large left-col-item">
-				<img style="margin: 0 auto;" src="http://vacasa-email.imgix.net/icon-tier1-speaker.png?h=36" alt="Divider Icon">
-			</column>
-			<column large="10" small="10" class="padding-b-large text-left mbl-pad-md">
-				<h3 class="body-text">Alarm code: <span class="body-text">{{ RESERVATION_ALARM_CODE }}</span>
-				</h3>
-				<p class="body-text">
-					{{{ RESERVATION_ALARM_CODE_NOTES }}}</p><br />
-				<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+<!-- PARKING -->
+<container>
+	<row>
+		<column class="text-left gutter padding-b mbl-pad-md">
+			<h2 class="t_bloc">Get parked</h2>
+		</column>
+	</row>
+	<row class="gutter">
+		<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+			<img width="60"
+				src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/0b602a9d-ff9f-4024-adaa-f5c10cb324ef/120x120.png"
+				alt="Get parked">
+		</column>
+		<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+			{{#compare UNIT_PARKING_TOTAL_CARS "==" "0"}}
+				{{#if UNIT_PARKING_NOTES}}
+					<p class="sub-message padding-b-large">{{UNIT_PARKING_NOTES}}</p>
+				{{else}}
+					<p class="sub-message padding-b-large">Dedicated parking is not available for this home.</p>
+				{{/if}}
+				{{else}}
+					<h3 class="t_bloc padding-b-small" style="font-weight:normal, font-family: 'Nunito Sans', Arial, sans-serif;">
+						{{#compare UNIT_AMENITIES_MAP_PAIDPARKINGONLY "==" "0"}}
+							Free
+							{{else}}
+								Paid
+						{{/compare}} parking for
+						{{UNIT_PARKING_TOTAL_CARS}}
+						vehicle{{#compare UNIT_PARKING_TOTAL_CARS ">" "1"}}s
+						{{else}}
+			{{/compare}}
+			</h3>
+			<p class="sub-message padding-b-large">
+				{{#if UNIT_PARKING_NOTES}}
+					{{UNIT_PARKING_NOTES}}
+				{{/if}}
+			</p>
+			{{/compare}}
+			<p class="padding-b-large">&nbsp;</p>
+			<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
+		</column>
+	</row>
+</container>
+<container>
+	<row>
+		<column class="padding-b-huge">
+		</column>
+	</row>
+</container>
 
-			</column>
-		</row>
-	{{/if}}
-	<!-- WiFi -->
-	{{#if RESERVATION_WIFI }}
+
+<!-- WiFi -->
+{{#if RESERVATION_WIFI}}
+	<container>
 		<row>
-			<column class="padding-b-large text-gutter text-left mbl-pad-md">
+			<column class="text-left gutter padding-b mbl-pad-md">
 				<h2 class="t_bloc">Get online</h2>
 			</column>
 		</row>
-		<row>
-			<column large="2" small="2" class="padding-b-large left-col-item">
-				<img style="margin: 0 auto;" src="http://vacasa-email.imgix.net/icon-wifi.png?h=36" alt="Divider Icon">
+		<row class="gutter">
+			<column large="2" small="4" class="text-left  padding-b mbl-pad-md">
+				<img width="60"
+					src="http://cdn.mcauto-images-production.sendgrid.net/0159359ac99e65a1/343f27a1-bf36-426d-9c65-94faf0060b30/120x120.png"
+					alt="Get online">
+				<p class="padding-b-large">&nbsp;</p>
 			</column>
-			<column large="10" small="10" class="padding-b-large text-left mbl-pad-md">
-				<h3 class="body-text">
-					Network: <span class="body-text">{{ RESERVATION_WIFI_NETWORK }}</span><br />
-					Password: <span class="body-text">{{ RESERVATION_WIFI_PASSWORD }}</span>
+			<column large="10" small="8" class="text-left padding-t-small padding-b mbl-pad-md">
+				<h3 style="font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc">
+					Network: <span style="font-weight: 400;">{{ RESERVATION_WIFI_NETWORK }}</span>
 				</h3>
-				<p class="body-text">
-					{{{ UNIT_INTERNET_NOTES }}}
-				</p>
+				<h3 style="font-family: 'Nunito Sans', Arial, sans-serif;" class="t_bloc padding-t-small">
+					Password: <span style="font-weight: 400;">{{ RESERVATION_WIFI_PASSWORD }}</span>
+				</h3>
+				<p class="padding-b-large">&nbsp;</p>
+				<hr style="border-top:1px solid rgb(229, 235, 237); width: 100%; max-width:600px; height:1px;" />
 			</column>
 		</row>
-	{{/if}}
+	</container>
+{{/if}}
+
+<container>
+	<row>
+		<column class="left-btn padding-b-huge padding-t-xtra-large text-center mbl-pad-md">
+			<!-- {{{{/raw-helper}}}} -->
+			{{> t_primary-button label="View Your Trip" url="{{{ TRIP_PORTAL_URL }}}" }}
+
+			<!-- {{{{raw-helper}}}} -->
+		</column>
+	</row>
 </container>
-<container class="add-info check-in">
+
+
+{{#contains RESERVATION_UNIT_ADDRESS_CITY "Tahoe"}}
+	{{> tahoe-safety }}
+	{{else}}{{/contains}}
+
+<container class="add-info">
 	<row>
-		<column class="padding-b-large padding-t text-gutter text-left mbl-pad-md">
-			<h2 class="t_bloc">Need Help?</h2>
+		<column class="padding-b text-gutter text-left mbl-pad-md">
+			<h2 class="t_bloc">Need help?</h2>
 		</column>
 	</row>
 	<row>
 		<column class="padding-b-large text-gutter text-left mbl-pad-md">
 			<h3 class="body-text">
-				If you can't find the home
+				Finding the home
 			</h3>
-
-			<p class="body-text">
-				Try using Google Maps, Apple Maps, or Waze. Call us at 800-544-0300 if you're still unable to find the home.</p>
+			<p class="body-text"><a class="bright"
+					href="https://www.google.com/maps/place/{{ RESERVATION_UNIT_ADDRESS_ADDRESS_1 }},{{ RESERVATION_UNIT_ADDRESS_CITY }},{{ RESERVATION_UNIT_ADDRESS_STATE }}, {{ RESERVATION_UNIT_ADDRESS_ZIP }}"
+					target="_blank"><strong>Try plugging the address</strong></a> into Google Maps, Apple Maps, or Waze. Check
+				your Trip Manager
+				for
+				extra directions.</p>
 		</column>
 	</row>
 	<row>
 		<column class="padding-b-large text-gutter text-left mbl-pad-md">
 			<h3 class="body-text">
-				If you need help with the lockbox or keypad
+				Using the lockbox or keypad
 			</h3>
-
 			<p class="body-text">
-				Our guide to lockboxes and smart locks can help. If you're still having trouble, call us at 800-544-0300.</p>
+				Find instructions in
+				<a class="bright"
+					href="https://www.vacasa.com/go/lock-instructions?utm_source=transactional&utm_medium=email&utm_campaign=tx-5_guest-reservation-check-in"
+					target="_blank"><strong>our guide</strong></a> to lockboxes and smart locks.
+			</p>
 		</column>
 	</row>
 	<row>
 		<column class="padding-b-large text-gutter text-left mbl-pad-md">
 			<h3 class="body-text">
-				If you can't connect to the internet
+				Connecting to the internet
 			</h3>
-
 			<p class="body-text">
-				Unplug the router, then wait two minutes and plug it back in. Wait another two to five minutes before you try to
-				connect.</p>
+				Unplug the router, then wait two minutes and plug it back in. Wait another 2 to 5 minutes before you try to
+				connect.
+			</p>
 		</column>
 	</row>
+	<row>
+		<column class="text-gutter text-left mbl-pad-md">
+			<p class="body-text padding-b">
+				Still having trouble? Call 800-544-0300 or visit our Support center for more FAQ.
+			</p>
+		</column>
+	</row>
+	<row>
+		<column class="padding-b-large gutter mbl-pad-md">
+			<!--[if mso]>
+				<div>
+					 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.vacasa.com/support?utm_source=transactional&utm_medium=email&utm_campaign=tx-5-guest-reservation-check-in#manage-trip" style="height:40px;v-text-anchor:middle;width:268px" arcsize="10%" strokecolor="#0078ab" fillcolor="#ffffff">
+							<w:anchorlock>
+							<center style="color:#0078ab;font-family:'Nunito Sans',Arial,sans-serif;font-size:16px;font-weight:700">Go to Support Center</center>
+					 </v:roundrect>
+					 <a href="https://www.vacasa.com/support?utm_source=transactional&utm_medium=email&utm_campaign=tx-5-guest-reservation-check-in#manage-trip" style="background-color:#fff;border:1px solid #0078ab;border-radius:4px;color:#0078ab;display:inline-block;font-family:'Nunito Sans',Arial,sans-serif;font-size:16px;font-weight:700;line-height:40px;text-align:center;text-decoration:none;width:268px;-webkit-text-size-adjust:none;mso-hide:all">Go to Support Center</a>
+				</div>
+				<div style="mso-hide:all!important;display:none!important"></div>
+				<![endif]-->
+			<!--[if !mso]><!-->
+			<a href="https://www.vacasa.com/support?utm_source=transactional&utm_medium=email&utm_campaign=tx-5-guest-reservation-check-in#manage-trip"
+				class="a" target="_blank" style="text-decoration: none; color: #003349;">
+				<div class="secondary slug">
+					<table role="presentation" width="100%" height="40" align="center" border="0" cellpadding="0" cellspacing="0"
+						style="margin: 0 auto !important;">
+						<tbody>
+							<tr>
+								<td style="padding: 0 !important;">
+									<table role="presentation" width="auto" align="center" border="0" cellspacing="0" cellpadding="0"
+										style="margin: 0 auto !important;">
+										<tbody>
+											<tr>
+												<td align="center" style="padding: 6px 12px; width: 100%; max-width: 472px;" width="100%"
+													bgcolor="#ffffff">
+													<a href="https://www.vacasa.com/support?utm_source=transactional&utm_medium=email&utm_campaign=tx-5-guest-reservation-check-in#manage-trip"
+														style="color: #0078ab; font-family: 'Nunito Sans',Arial,sans-serif; font-size: 16px; text-decoration: none; display: inline-block;"><span
+															class="button__text"
+															style="color: #0078ab; text-decoration: none; white-space: normal;">Go to Support
+															Center</span></a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</a>
+			<!--<![endif]-->
+			<!--[if mso]></div><![endif]-->
+		</column>
+	</row>
+</container>
 
+<container class="add-info">
+	{{#if RESERVATION_DRIVING_DIRECTIONS }}
+		{{#contains RESERVATION_DRIVING_DIRECTIONS "https://www.google.com/maps/place/"}}
+	{{else}}
+		<row>
+			<column class="padding-b padding-t text-gutter text-left mbl-pad-md">
+				<h2 class="t_bloc">Driving directions</h2>
+				<p class="body-text padding-t">{{{ RESERVATION_DRIVING_DIRECTIONS }}}</p>
+			</column>
+		</row>
+		{{/contains}}
+	{{else}}{{/if}}
+</container>
+
+<container>
+	<row>
+		<column class="padding-b-large">
+		</column>
+	</row>
 </container>
 
 <!-- {{{{/raw-helper}}}} -->
